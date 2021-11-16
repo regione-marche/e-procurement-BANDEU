@@ -1,0 +1,81 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+applicationSuite: e-procurement GT-SUAM
+categories:
+  - procurement
+dependsOn:
+  open:
+    - name: Java
+      optional: false
+      version: OpenJDK-11.0.12
+      versionMax: '11'
+      versionMin: '1.8'
+    - name: Postgresql
+      optional: false
+      version: ''
+      versionMax: '11'
+      versionMin: '9.6'
+    - name: Tomcat
+      optional: false
+      version: 9.0.54
+      versionMax: '9'
+      versionMin: '8'
+description:
+  it:
+    features:
+      - Acquisizione dei dati dei formulari mediante API
+      - Compilaizone e controllo dei dati da pubblicare
+      - Generazione anterpima PDF del formulario
+      - Invio dei dati al SIMAP per la pubblicazione dei formulari GUUE
+    genericName: e-procurement platform
+    longDescription: |
+      Modulo per l'invio al SIMAP dei dati per la pubblicazione dei formulari GUUE.
+      La stazione appaltante può pubblicare i bandi di gara e gli avvisi nel sito SIMAP utilizzando il servizio eSenders.
+      Per l'utilizzo del servizio eSenders è necessaria la qualificazione secondo le regole descritte nel sito https://simap.ted.europa.eu/ e la conseguente configurazione dell'applicazione.
+      Il modulo permette l’inserimento e la gestione di tutte le informazioni (obbligatorie e facoltative) previste dai formulari europei, ovvero al termine dell’inserimento permette di:
+      - controllare i dati inseriti prima dell’invio
+      - produrre il file PDF del formulario (facoltativo)
+      - inviare i dati al SIMAP per la pubblicazione sulla GUUE
+      E' quindi possibile controllare lo stato di pubblicazione del formulario e al termine ottenre automaticamente i riferimenti della pubblicazione (numero e data).
+      Sono inclusi dei servizi (API) per poter acquisire in automatico dal modulo Appalti i dati utili ad istnziare i formulari e per resituirne gli estremi.
+    shortDescription: Modulo per l'invio dei formulari GUUE al SIMAP
+usedBy:
+  - Regione Marche
+developmentStatus: stable
+it:
+  conforme:
+    gdpr: false
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: true
+    pagopa: false
+    spid: true
+  riuso:
+    codiceIPA: r_marche
+legal:
+  license: EUPL-1.2
+  mainCopyrightOwner: Maggioli S.p.A.
+  repoOwner: Regione Marche
+localisation:
+  availableLanguages:
+    - it
+  localisationReady: false
+maintenance:
+  contractors:
+    - name: MAGGIOLI SPA
+      until: '2021-12-31'
+      website: 'https://www.maggioli.com'
+  type: contract
+name: BANDEU
+platforms:
+  - web
+releaseDate: '2021-10-15'
+softwareType: standalone/web
+url: 'https://github.com/regione-marche/e-procurement-BANDEU.git'
