@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FS8" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.1269722013523664"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\jrReportSimap\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3SIMAP.ID AS W3SIMAP_ID,
+     W3SIMAP.FORM AS W3SIMAP_FORM,
+     W3SIMAP.CODAMM AS W3SIMAP_CODAMM,
+     W3SIMAP.CTYPE AS W3SIMAP_CTYPE,
+     W3SIMAP.NOTICE_NUMBER_OJ AS W3SIMAP_NOTICE_NUMBER_OJ,
+     W3SIMAP.DATE_OJ AS W3SIMAP_DATE_OJ,
+     W3SIMAP.SYSCON AS W3SIMAP_SYSCON,
+     W3FS8.ID AS W3FS8_ID,
+     W3FS8.NOTICE_RELATION AS W3FS8_NOTICE_RELATION,
+     V_W3SIMAP.NOTICE_DATE AS W3FS8_NOTICE_DATE,
+     W3FS8S2.ID AS W3FS8S2_ID,
+     W3FS8S2.NUM AS W3FS8S2_NUM,
+     W3FS8S2.TITLE_CONTRACT AS W3FS8S2_TITLE_CONTRACT,
+     W3FS8S2.TYPE_CONTRACT AS W3FS8S2_TYPE_CONTRACT,
+     W3FS8S2.SHORT_DESCRIPTION AS W3FS8S2_SHORT_DESCRIPTION,
+     W3FS8S2.CPV AS W3FS8S2_CPV,
+     W3FS8S2.CPVSUPP1 AS W3FS8S2_CPVSUPP1,
+     W3FS8S2.CPVSUPP2 AS W3FS8S2_CPVSUPP2,
+     W3FS8.ADDITIONAL_INFORMATION AS W3FS8_ADDITIONAL_INFORMATION,
+     W3FS8.FURTHER_INFO AS W3FS8_FURTHER_INFO,
+     W3FS8.FURTHER_INFO_CODEIN AS W3FS8_FURTHER_INFO_CODEIN
+FROM
+     W3SIMAP,
+     W3FS8,
+     W3FS8S2,
+     V_W3SIMAP
+WHERE
+     W3SIMAP.ID = W3FS8.ID
+AND  W3FS8S2.ID = W3FS8.ID
+AND  V_W3SIMAP.ID = W3SIMAP.ID
+AND  W3FS8S2.NUM = 1
+AND  W3FS8.ID = $P{id}]]>
+	</queryString>
+	<field name="W3SIMAP_ID" class="java.math.BigDecimal"/>
+	<field name="W3SIMAP_FORM" class="java.lang.String"/>
+	<field name="W3SIMAP_CODAMM" class="java.lang.String"/>
+	<field name="W3SIMAP_CTYPE" class="java.lang.String"/>
+	<field name="W3SIMAP_NOTICE_NUMBER_OJ" class="java.lang.String"/>
+	<field name="W3SIMAP_DATE_OJ" class="java.sql.Timestamp"/>
+	<field name="W3SIMAP_SYSCON" class="java.math.BigDecimal"/>
+	<field name="W3FS8_ID" class="java.math.BigDecimal"/>
+	<field name="W3FS8_NOTICE_RELATION" class="java.lang.String"/>
+	<field name="W3FS8_NOTICE_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS8S2_ID" class="java.math.BigDecimal"/>
+	<field name="W3FS8S2_NUM" class="java.math.BigDecimal"/>
+	<field name="W3FS8S2_TITLE_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS8S2_TYPE_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS8S2_SHORT_DESCRIPTION" class="java.lang.String"/>
+	<field name="W3FS8S2_CPV" class="java.lang.String"/>
+	<field name="W3FS8S2_CPVSUPP1" class="java.lang.String"/>
+	<field name="W3FS8S2_CPVSUPP2" class="java.lang.String"/>
+	<field name="W3FS8_ADDITIONAL_INFORMATION" class="java.lang.String"/>
+	<field name="W3FS8_FURTHER_INFO" class="java.lang.String"/>
+	<field name="W3FS8_FURTHER_INFO_CODEIN" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="90" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3SIMAP_NOTICE_NUMBER_OJ}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="15" width="90" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3SIMAP_DATE_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="141" y="0" width="273" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avviso sul profilo di committente]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="509" y="0" width="46" height="15"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="42" height="15"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="555" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="678" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="125" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE I: AMMINISTRAZIONE AGGIUDICATRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="145" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.1) Denominazione, indirizzi e punti di contatto]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8S2_TITLE_CONTRACT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="165" y="25" width="100" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3SIMAP_NOTICE_NUMBER_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="265" y="25" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[del]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="290" y="25" width="90" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3SIMAP_DATE_OJ}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="165" width="555" height="44" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Amministrazione.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="326" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE II: OGGETTO DELL'APPALTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="346" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1) Denominazione conferita all'appalto dall'amministrazione aggiudicatrice/ente aggiudicatore]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="366" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8S2_TITLE_CONTRACT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="401" width="153" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.2) Tipo di appalto]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="421" width="555" height="15"/>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z40"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS8S2_TYPE_CONTRACT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="456" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.3) Breve descrizione dell'appalto o degli acquisti]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="476" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8S2_SHORT_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="511" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.4) CPV (Vocabolario comune per gli appalti)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="395" y="546" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8S2_CPVSUPP1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="475" y="546" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8S2_CPVSUPP2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="226" y="546" width="169" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8S2_CPV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="225" y="531" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario principale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="395" y="531" width="160" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario supplementare]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="3" y="546" width="222" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Oggetto principale:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="562" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="num">
+					<subreportParameterExpression><![CDATA[$F{W3FS8S2_NUM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ent">
+					<subreportParameterExpression><![CDATA["W3FS8S2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CpvAdditional.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement positionType="Float" x="0" y="578" width="555" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="598" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE VI: ALTRE INFORMAZIONI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="658" width="226" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.2) Data di spedizione del presente avviso:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="225" y="658" width="100" height="20"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS8_NOTICE_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="70" width="275" height="20"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Il presente avviso è connesso alla pubblicazione di un:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="280" y="90" width="275" height="15"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS8_NOTICE_RELATION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z61"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement positionType="Float" x="0" y="105" width="555" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="264" width="555" height="42" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codamm">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_CODAMM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="formulario">
+					<subreportParameterExpression><![CDATA["FS8"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "TipoAmministrazioneCompleta.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement positionType="Float" x="0" y="244" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="381" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="436" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="491" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="618" width="226" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.1) Informazioni complementari:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="638" width="555" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS8_ADDITIONAL_INFORMATION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="229" width="214" height="15"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ulteriori informazioni sono disponibili presso: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="214" y="229" width="341" height="15"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS8_FURTHER_INFO}==null ? "--": ($F{W3FS8_FURTHER_INFO}.equals("1") ? "I punti di contatto sopra indicati":"Altro: vedi allegato A.I"))]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="209" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="306" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement x="0" y="50" width="555" height="20"/>
+			</frame>
+		</band>
+		<band height="92">
+			<printWhenExpression><![CDATA[$F{W3FS8_FURTHER_INFO_CODEIN}!=null]]></printWhenExpression>
+			<break>
+				<reportElement x="0" y="2" width="100" height="1"/>
+			</break>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="-1" y="23" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altri indirizzi e punti di contatto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="-1" y="3" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allegato A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="43" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS8_FURTHER_INFO_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I) Indirizzi e punti di contatto dai quali è possibile ottenere ulteriori informazioni]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="63" width="555" height="29"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS8_FURTHER_INFO_CODEIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="39">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="39" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codamm">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_CODAMM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="form">
+					<subreportParameterExpression><![CDATA["FS8"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "AltreAmministrazioni.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

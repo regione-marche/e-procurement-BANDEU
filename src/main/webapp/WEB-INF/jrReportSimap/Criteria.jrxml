@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Criteria" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3CRITERIA.ID AS W3CRITERIA_ID,
+     W3CRITERIA.NUM AS W3CRITERIA_NUM,
+     W3CRITERIA.ORDER_C AS W3CRITERIA_ORDER_C,
+     W3CRITERIA.CRITERIA AS W3CRITERIA_CRITERIA,
+     W3CRITERIA.WEIGHTING AS W3CRITERIA_WEIGHTING
+FROM
+     W3CRITERIA
+WHERE
+     W3CRITERIA.ID = $P{id}
+ORDER BY
+     W3CRITERIA.NUM]]>
+	</queryString>
+	<field name="W3CRITERIA_ID" class="java.math.BigDecimal"/>
+	<field name="W3CRITERIA_NUM" class="java.math.BigDecimal"/>
+	<field name="W3CRITERIA_ORDER_C" class="java.math.BigDecimal"/>
+	<field name="W3CRITERIA_CRITERIA" class="java.lang.String"/>
+	<field name="W3CRITERIA_WEIGHTING" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="15">
+			<staticText>
+				<reportElement x="3" y="0" width="235" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Criterio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="0" width="85" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Ponderazione]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="3" y="0" width="235" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3CRITERIA_NUM} + ". " + $F{W3CRITERIA_CRITERIA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="238" y="0" width="85" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3CRITERIA_WEIGHTING}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

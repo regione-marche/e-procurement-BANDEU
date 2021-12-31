@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+####################################################################################
+#  XSD name : TED_ESENDERS  (.xsd) 
+#  RELEASE : "R2.0.8.S02"
+#  Intermediate release number 011-20131108
+#  Last update :20/02/2012
+####################################################################################
+ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://publications.europa.eu/TED_schema/Reception" targetNamespace="http://publications.europa.eu/TED_schema/Reception" elementFormDefault="qualified" attributeFormDefault="unqualified" version="R2.0.8.S02">
+	<xs:include schemaLocation="common.xsd"/>
+	<xs:include schemaLocation="F01_PRIOR_INFORMATION.xsd"/>
+	<xs:include schemaLocation="F02_CONTRACT.xsd"/>
+	<xs:include schemaLocation="F03_CONTRACT_AWARD.xsd"/>
+	<xs:include schemaLocation="F08_BUYER_PROFILE.xsd"/>
+	<xs:include schemaLocation="F09_SIMPLIFIED_CONTRACT.xsd"/>
+	<xs:include schemaLocation="F14_ADDITIONAL_INFORMATION_CORRIGENDUM.xsd"/>
+	<xs:complexType name="ted_esenders">
+		<xs:sequence>
+			<xs:element ref="SENDER"/>
+			<xs:element name="FORM_SECTION">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="PRIOR_INFORMATION" maxOccurs="unbounded"/>
+						<xs:element ref="CONTRACT" maxOccurs="unbounded"/>
+						<xs:element ref="CONTRACT_AWARD" maxOccurs="unbounded"/>
+						<xs:element ref="BUYER_PROFILE" maxOccurs="unbounded"/>
+						<xs:element ref="SIMPLIFIED_CONTRACT" maxOccurs="unbounded"/>
+						<xs:element ref="ADDITIONAL_INFORMATION_CORRIGENDUM" maxOccurs="unbounded"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TED_ESENDERS" type="ted_esenders">
+		<xs:annotation>
+			<xs:documentation>Root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

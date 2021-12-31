@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ############################################################################### 
+#  RELEASE "R2.0.7.S03"                                                                #
+#  XSD name : F03_CONTRACT_AWARD                                                   #
+#  Last update : 30/06/2010                                                        #
+#                                                                                  #
+####################################################################################
+ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="R2.0.7.S03">
+	<xs:include schemaLocation="common.xsd"/>
+	<!-- complementary_information_contract_award Declaration -->
+	<xs:complexType name="complementary_information_contract_award">
+		<xs:annotation>
+			<xs:documentation>SECTION VI: COMPLEMENTARY INFORMATION</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice minOccurs="0">
+				<xs:element ref="RELATES_TO_EU_PROJECT_YES"/>
+				<xs:element ref="RELATES_TO_EU_PROJECT_NO"/>
+			</xs:choice>
+			<xs:element ref="ADDITIONAL_INFORMATION" minOccurs="0"/>
+			<xs:element ref="PROCEDURES_FOR_APPEAL" minOccurs="0"/>
+			<xs:element ref="NOTICE_DISPATCH_DATE"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- award_of_contract declaration in common.xsd -->
+	<!-- procedure_definition_contract_award_notice declaration -->
+	<xs:complexType name="administrative_information_contract_award">
+		<xs:annotation>
+			<xs:documentation>SECTION IV.3: ADMINISTRATIVE INFORMATION</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="FILE_REFERENCE_NUMBER" minOccurs="0"/>
+			<xs:group ref="INC_31_F3"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="award_criteria_contract_award_notice_information">
+		<xs:annotation>
+			<xs:documentation>SECTION IV.2: AWARD CRITERIA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="INC_30_F03" minOccurs="0"/>
+			<xs:element name="F03_IS_ELECTRONIC_AUCTION_USABLE" type="yes_no" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>AN ELECTRONIC AUCTION WILL BE USED</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="annex_d">
+		<xs:annotation>
+			<xs:documentation>Annexe D: JUSTIFICATION FOR THE CHOICE OF THE NEGOCIATED PROCEDURE WITHOUT PRIOR CALL FOR COMPETITION</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NO_OPEN_RESTRICTED" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="VALUE" type="lst_19" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:element ref="MANUFACTURED_BY_DIRECTIVE"/>
+				<xs:element ref="NO_MANUFACTURED_BY_DIRECTIVE"/>
+			</xs:choice>
+			<xs:group ref="INC_07" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="ONLY_IRREGULAR_INACCEPTABLE_TENDERERS"/>
+				<xs:element ref="NO_ONLY_IRREGULAR_INACCEPTABLE_TENDERERS"/>
+			</xs:choice>
+			<xs:element ref="OTHER_JUSTIFICATION" minOccurs="0"/>
+			<xs:element ref="REASON_CONTRACT_LAWFUL" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="f03_pt_negotiated_without_competition">
+		<xs:sequence>
+			<xs:element name="ANNEX_D" type="annex_d" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="f03_award_without_prior_publication">
+		<xs:sequence>
+			<xs:element name="ANNEX_D" type="annex_d" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_of_procedure_def">
+		<xs:annotation>
+			<xs:documentation>Section IV.1: TYPE OF PROCEDURE</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0">
+			<xs:element ref="PT_OPEN"/>
+			<xs:element ref="PT_RESTRICTED"/>
+			<xs:element ref="PT_ACCELERATED_RESTRICTED"/>
+			<xs:element ref="PT_COMPETITIVE_DIALOGUE"/>
+			<xs:element ref="PT_NEGOTIATED_WITH_COMPETITION"/>
+			<xs:element ref="PT_ACCELERATED_NEGOTIATED"/>
+			<xs:element name="F03_PT_NEGOTIATED_WITHOUT_COMPETITION" type="f03_pt_negotiated_without_competition"/>
+			<xs:element name="F03_AWARD_WITHOUT_PRIOR_PUBLICATION" type="f03_award_without_prior_publication"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="procedure_definition_contract_award_notice">
+		<xs:annotation>
+			<xs:documentation>Section IV: PROCEDURE</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TYPE_OF_PROCEDURE_DEF" type="type_of_procedure_def" minOccurs="0"/>
+			<xs:element name="AWARD_CRITERIA_CONTRACT_AWARD_NOTICE_INFORMATION" type="award_criteria_contract_award_notice_information" minOccurs="0"/>
+			<xs:element name="ADMINISTRATIVE_INFORMATION_CONTRACT_AWARD" type="administrative_information_contract_award" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- object_contract_information_contract_award_notice declaration -->
+	<xs:complexType name="description_award_notice_information">
+		<xs:annotation>
+			<xs:documentation>Section II.1: DESCRIPTION</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="TITLE_CONTRACT" minOccurs="0"/>
+			<xs:sequence>
+				<xs:group ref="INC_11_PUB"/>
+				<xs:group ref="INC_12"/>
+			</xs:sequence>
+			<xs:element name="NOTICE_INVOLVES_DESC" type="notice_involves_desc" minOccurs="0"/>
+			<xs:element ref="SHORT_CONTRACT_DESCRIPTION"/>
+			<xs:group ref="INC_10"/>
+			<xs:element ref="CONTRACT_COVERED_GPA" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="object_contract_information_contract_award_notice">
+		<xs:annotation>
+			<xs:documentation>Section II: OBJECT OF THE CONTRACT</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DESCRIPTION_AWARD_NOTICE_INFORMATION" type="description_award_notice_information"/>
+			<xs:element name="TOTAL_FINAL_VALUE" type="total_final_value" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- contacting_authorithy_information declaration -->
+	<xs:complexType name="internet_addresses_contract_award">
+		<xs:sequence>
+			<xs:element ref="URL_GENERAL" minOccurs="0"/>
+			<xs:element ref="URL_BUYER" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="name_addresses_contact_contract_award">
+		<xs:sequence>
+			<xs:group ref="INC_01"/>
+			<xs:element name="INTERNET_ADDRESSES_CONTRACT_AWARD" type="internet_addresses_contract_award" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contacting_authority_information">
+		<xs:annotation>
+			<xs:documentation>Section I: CONTRACTING AUTHORITY</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NAME_ADDRESSES_CONTACT_CONTRACT_AWARD" type="name_addresses_contact_contract_award">
+				<xs:annotation>
+					<xs:documentation>Section I.1: NAME, ADDRESSES AND CONTACT POINT(S)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="TYPE_AND_ACTIVITIES_AND_PURCHASING_ON_BEHALF" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- fd_contract_award declaration -->
+	<xs:complexType name="fd_contract_award">
+		<xs:sequence>
+			<xs:element name="CONTACTING_AUTHORITY_INFORMATION" type="contacting_authority_information"/>
+			<xs:element name="OBJECT_CONTRACT_INFORMATION_CONTRACT_AWARD_NOTICE" type="object_contract_information_contract_award_notice"/>
+			<xs:element name="PROCEDURE_DEFINITION_CONTRACT_AWARD_NOTICE" type="procedure_definition_contract_award_notice"/>
+			<xs:element name="AWARD_OF_CONTRACT" type="award_of_contract" maxOccurs="unbounded"/>
+			<xs:element name="COMPLEMENTARY_INFORMATION_CONTRACT_AWARD" type="complementary_information_contract_award"/>
+		</xs:sequence>
+		<xs:attribute name="CTYPE" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="WORKS"/>
+					<xs:enumeration value="SERVICES"/>
+					<xs:enumeration value="SUPPLIES"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- contract_award declaration -->
+	<xs:complexType name="contract_award">
+		<xs:sequence>
+			<xs:element ref="SENDER"/>
+			<xs:element name="FD_CONTRACT_AWARD" type="fd_contract_award"/>
+		</xs:sequence>
+		<xs:attribute name="LG" type="languages" use="required"/>
+		<xs:attribute name="CATEGORY" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="TRANSLATION"/>
+					<xs:enumeration value="ORIGINAL"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="FORM" use="required" fixed="3"/>
+		<xs:attribute name="VERSION" use="required" fixed="R2.0.7.S03"/>
+	</xs:complexType>
+	<!-- ROOT element -->
+	<xs:element name="CONTRACT_AWARD" type="contract_award">
+		<xs:annotation>
+			<xs:documentation>F3 root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

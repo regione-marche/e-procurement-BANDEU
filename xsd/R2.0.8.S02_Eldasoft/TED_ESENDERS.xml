@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:TED_ESENDERS xmlns:p="http://publications.europa.eu/TED_schema/Reception" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://publications.europa.eu/TED_schema/Reception TED_ESENDERS.xsd ">
+  <p:SENDER>
+    <p:LOGIN CLASS="A">
+      <p:ESENDER_LOGIN>p:ESENDER_LOGIN</p:ESENDER_LOGIN>
+      <p:CUSTOMER_LOGIN>p:CUSTOMER_LOGIN</p:CUSTOMER_LOGIN>
+    </p:LOGIN>
+    <p:USER>
+      <p:ORGANISATION>
+        <p:OFFICIALNAME>p:OFFICIALNAME</p:OFFICIALNAME>
+        <p:NATIONALID>p:NATIONALID</p:NATIONALID>
+      </p:ORGANISATION>
+      <p:ATTENTION>p:ATTENTION</p:ATTENTION>
+      <p:ADDRESS>p:ADDRESS</p:ADDRESS>
+      <p:POSTAL_CODE>p:POSTAL_CODE</p:POSTAL_CODE>
+      <p:TOWN>p:TOWN</p:TOWN>
+      <p:COUNTRY VALUE="1A"/>
+      <p:PHONE>p:PHONE</p:PHONE>
+      <p:FAX>p:FAX</p:FAX>
+      <p:USER_E_MAILS>
+        <p:USER_E_MAIL TYPE="FUNCTIONAL">p:USER_E_MAIL</p:USER_E_MAIL>
+      </p:USER_E_MAILS>
+      <p:URL>p:URL</p:URL>
+    </p:USER>
+    <p:NO_DOC_EXT>p:NO_DOC_EXT</p:NO_DOC_EXT>
+  </p:SENDER>
+  <p:FORM_SECTION>
+    <p:PRIOR_INFORMATION CATEGORY="ORIGINAL" FORM="1" LG="BG" VERSION="R2.0.8.S02">
+      <p:FD_PRIOR_INFORMATION CTYPE="WORKS">
+        <p:AUTHORITY_PRIOR_INFORMATION>
+          <p:NAME_ADDRESSES_CONTACT_PRIOR_INFORMATION>
+            <p:FURTHER_INFORMATION>
+              <p:IDEM/>
+            </p:FURTHER_INFORMATION>
+          </p:NAME_ADDRESSES_CONTACT_PRIOR_INFORMATION>
+        </p:AUTHORITY_PRIOR_INFORMATION>
+        <p:OBJECT_WORKS_PRIOR_INFORMATION>
+          <p:QUANTITY_SCOPE_WORKS>
+            <p:TOTAL_QUANTITY_OR_SCOPE/>
+          </p:QUANTITY_SCOPE_WORKS>
+        </p:OBJECT_WORKS_PRIOR_INFORMATION>
+        <p:LEFTI_PRIOR_INFORMATION/>
+        <p:OTH_INFO_PRIOR_INFORMATION>
+          <p:NOTICE_DISPATCH_DATE>
+            <p:DAY>0</p:DAY>
+            <p:MONTH>0</p:MONTH>
+            <p:YEAR>2001</p:YEAR>
+          </p:NOTICE_DISPATCH_DATE>
+        </p:OTH_INFO_PRIOR_INFORMATION>
+      </p:FD_PRIOR_INFORMATION>
+    </p:PRIOR_INFORMATION>
+  </p:FORM_SECTION>
+</p:TED_ESENDERS>

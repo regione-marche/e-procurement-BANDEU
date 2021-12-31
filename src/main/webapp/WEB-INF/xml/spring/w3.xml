@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	
+	
+	<!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+	<bean id="attachmentDao"
+		class="it.eldasoft.sil.w3.db.dao.ibatis.SqlMapAttachmentDao">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<!-- ========================= DAO DEFINITIONS: JDBC IMPLEMENTATIONS ========================= -->
+
+
+	<!-- ========================= BEAN DEFINITIONS (GENERALI) ========================= -->
+	
+	<bean id="w3ManagerTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_NOT_SUPPORTED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="w3Manager" parent="w3ManagerTransactionProxy" >
+		<property name="target">
+			<bean class="it.eldasoft.sil.w3.bl.W3Manager" >
+				<property name="sqlManager" ref="sqlManager" />
+				<property name="genChiaviManager" ref="genChiaviManager" /> 
+				<property name="loginManager" ref="loginManager" />
+				<property name="ldapManager" ref="ldapManager" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- ========================= BEAN DEFINITIONS ========================= -->
+
+	<bean id="eldasoftSIMAPWSTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_NOT_SUPPORTED</prop>
+				<prop key="inserisci*">PROPAGATION_REQUIRED,-java.lang.Throwable</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="eldasoftSIMAPWSManager" parent="eldasoftSIMAPWSTransactionProxy" >
+		<property name="target">
+			<bean class="it.eldasoft.sil.w3.bl.EldasoftSIMAPWSManager" >
+				<property name="geneManager" ref="geneManager" />
+				<property name="loginManager" ref="loginManager" />
+				<property name="sqlManager" ref="sqlManager" />
+				<property name="ldapManager" ref="ldapManager" />
+				<property name="genChiaviManager" ref="genChiaviManager" /> 
+				<property name="w3Manager" ref="w3Manager" /> 
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="eldasoftSIMAPWSFacade" class="it.eldasoft.sil.w3.bl.EldasoftSIMAPWSFacade" >
+		<property name="eldasoftSIMAPWSManager" ref="eldasoftSIMAPWSManager" />
+	</bean>
+
+	<bean id="exportXMLSIMAPManager" class="it.eldasoft.sil.w3.bl.ExportXMLSIMAPManager" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean id="validazioneSIMAPManagerTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_NOT_SUPPORTED</prop>
+				<prop key="validate*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="validazioneSIMAPManager" parent="validazioneSIMAPManagerTransactionProxy" >
+		<property name="target">
+			<bean class="it.eldasoft.sil.w3.bl.ValidazioneSIMAPManager" >
+				<property name="sqlManager" ref="sqlManager" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="gestioneServiziSIMAPManagerTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_NOT_SUPPORTED</prop>
+				<prop key="cancella*">PROPAGATION_REQUIRED</prop>
+				<prop key="memorizza*">PROPAGATION_REQUIRED</prop>
+				<prop key="submitNotice*">PROPAGATION_REQUIRED</prop>
+				<prop key="getNoticeReport*">PROPAGATION_REQUIRED</prop>
+				<prop key="renderNotice*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="gestioneServiziSIMAPManager" parent="gestioneServiziSIMAPManagerTransactionProxy" >
+		<property name="target">
+			<bean class="it.eldasoft.sil.w3.bl.GestioneServiziSIMAPManager" >
+				<property name="exportXMLSIMAPManager" ref="exportXMLSIMAPManager" />
+				<property name="sqlManager" ref="sqlManager" />
+				<property name="propsConfigManager" ref="propsConfigManager" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="getNoticeReportJob" class="it.eldasoft.gene.commons.web.spring.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="gestioneServiziSIMAPManager" />
+		<property name="targetMethod" value="getNoticeReportAll" />
+		<property name="concurrent" value="false"/>
+	</bean>
+	
+	<bean id="getNoticeReportTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="getNoticeReportJob" />
+		<property name="cronExpression">
+			<value>0 0 0 1 1 ? 2099</value>
+		</property>
+	</bean>
+	
+	<bean id="attachmentManager" class="it.eldasoft.sil.w3.bl.AttachmentManager" >
+		<property name="attachmentDao" ref="attachmentDao" />
+	</bean>
+	
+	<!-- ========================= STRUTS ACTION DEFINITIONS ========================= -->
+
+	<bean name="/w3/ComponiSIMAPEmail" class="it.eldasoft.sil.w3.web.struts.xml.ComponiSIMAPEmailAction">
+		<property name="validazioneSIMAPManager" ref="validazioneSIMAPManager" />
+	</bean>
+
+	<bean name="/w3/GeneraSIMAPDOC"
+		class="it.eldasoft.sil.w3.web.struts.xml.GeneraSIMAPDOCAction">
+		<property name="gestioneServiziSIMAPManager" ref="gestioneServiziSIMAPManager" />
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>	
+	
+	<bean name="/w3/AvviaInviaSIMAPWS" class="it.eldasoft.sil.w3.web.struts.xml.AvviaInviaSIMAPWSAction">
+		<property name="validazioneSIMAPManager" ref="validazioneSIMAPManager" />
+	</bean>
+	
+	<bean name="/w3/InviaSIMAPWS" class="it.eldasoft.sil.w3.web.struts.xml.InviaSIMAPWSAction">
+		<property name="gestioneServiziSIMAPManager" ref="gestioneServiziSIMAPManager" />
+	</bean>
+
+	<bean name="/w3/AvviaPdfSIMAPWS" class="it.eldasoft.sil.w3.web.struts.xml.AvviaPdfSIMAPWSAction">
+		<property name="validazioneSIMAPManager" ref="validazioneSIMAPManager" />
+	</bean>
+	
+	<bean name="/w3/PdfSIMAPWS" class="it.eldasoft.sil.w3.web.struts.xml.PdfSIMAPWSAction">
+		<property name="gestioneServiziSIMAPManager" ref="gestioneServiziSIMAPManager" />
+	</bean>
+
+	<bean name="/w3/VisualizzaAttachment"
+		class="it.eldasoft.sil.w3.web.struts.xml.VisualizzaAttachmentAction">
+		<property name="attachmentManager" ref="attachmentManager" />
+	</bean>
+	
+	<bean name="/w3/VisualizzaPermessiUtentiGruppi" class="it.eldasoft.sil.w3.web.struts.VisualizzaPermessiUtentiGruppiAction" >
+	</bean>	
+
+	<bean name="/w3/ModificaPermessiUtentiGruppi" class="it.eldasoft.sil.w3.web.struts.ModificaPermessiUtentiGruppiAction" >
+	</bean>
+	
+	<bean name="/w3/GetListaPermessiUtenti" class="it.eldasoft.sil.w3.web.struts.GetListaPermessiUtentiAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean name="/w3/GetListaPermessiGruppi" class="it.eldasoft.sil.w3.web.struts.GetListaPermessiGruppiAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean name="/w3/SetPermessi" class="it.eldasoft.sil.w3.web.struts.SetPermessiAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean name="/w3/GetListaUtentiGruppo" class="it.eldasoft.sil.w3.web.struts.GetListaUtentiGruppoAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean name="/w3/GetListaUtentiUnita" class="it.eldasoft.sil.w3.web.struts.GetListaUtentiUnitaAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean name="/w3/GetListaGruppiUnita" class="it.eldasoft.sil.w3.web.struts.GetListaGruppiUnitaAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>
+
+	<bean name="/w3/GestioneAlberoUnitGrp" class="it.eldasoft.sil.w3.web.struts.GestioneAlberoUnitGrpAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>	
+
+	<bean name="/w3/GetListaUnita" class="it.eldasoft.sil.w3.web.struts.GetListaUnitaAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>	
+	
+	<bean name="/w3/GestioneAlberoCpvVP" class="it.eldasoft.sil.w3.web.struts.GestioneAlberoCpvVPAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>	
+
+	<bean name="/w3/GestioneAlberoCpvVSUPP" class="it.eldasoft.sil.w3.web.struts.GestioneAlberoCpvVSUPPAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>	
+
+	<bean name="/w3/GestioneAlberoNUTS" class="it.eldasoft.sil.w3.web.struts.GestioneAlberoNUTSAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>	
+
+	<bean name="/w3/GetStatoValidazioneSIMAP" class="it.eldasoft.sil.w3.web.struts.GetStatoValidazioneSIMAPAction" >
+		<property name="validazioneSIMAPManager" ref="validazioneSIMAPManager" />
+	</bean>
+	
+	<bean name="/w3/GetStatoValidazioneW3ANNEXBSIMAP" class="it.eldasoft.sil.w3.web.struts.GetStatoValidazioneW3ANNEXBSIMAPAction" >
+		<property name="validazioneSIMAPManager" ref="validazioneSIMAPManager" />
+	</bean>	
+
+	<bean name="/w3/GetStatoValidazioneW3FS3AWARDSIMAP" class="it.eldasoft.sil.w3.web.struts.GetStatoValidazioneW3FS3AWARDSIMAPAction" >
+		<property name="validazioneSIMAPManager" ref="validazioneSIMAPManager" />
+	</bean>
+	
+	<bean name="/w3/SetW3SIMAPWSStato" class="it.eldasoft.sil.w3.web.struts.SetW3SIMAPWSStatoAction" >
+		<property name="sqlManager" ref="sqlManager" />
+	</bean>		
+
+</beans>
+

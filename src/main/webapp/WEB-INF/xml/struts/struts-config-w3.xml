@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	
+	<form-beans>
+		<form-bean name="uploadMultiploForm" type="it.eldasoft.sil.w3.web.struts.UploadMultiploForm" />
+	</form-beans>
+	
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+	
+		<action path="/Scheda" name="uploadMultiploForm" type="it.eldasoft.gene.web.struts.tags.SchedaAction" scope="request" validate="false" parameter="metodo" >
+			<!-- Se si verificano errori ritorna alla trova -->
+			<forward name="errore" path="/ApriPagina.do" module="/" />
+		</action >
+
+		<action path="/ComponiSIMAPEmail"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="componiemailsimapcontrollo" path="/WEB-INF/pages/w3/commons/popup-validazione-simap.jsp" module="/" />
+			<forward name="componiemailsimapsuccess" path="/WEB-INF/pages/w3/w3simapemail/w3simapemail-popup-invia.jsp" module="/" />
+		</action>
+		
+		<action path="/VisualizzaAttachment" type="org.springframework.web.struts.DelegatingActionProxy" 
+			scope="request" validate="false">
+		</action>
+		
+		<action path="/GeneraSIMAPDOC" type="org.springframework.web.struts.DelegatingActionProxy" 
+			scope="request" validate="false">
+		</action>
+		
+		<action path="/AvviaInviaSIMAPWS"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="inviasimapwscontrollo" path="/WEB-INF/pages/w3/commons/popup-validazione-simap.jsp" module="/" />
+			<forward name="inviasimapwsinvia" path="/WEB-INF/pages/w3/commons/popup-invia-simapws.jsp" module="/" />
+		</action>
+
+		<action path="/InviaSIMAPWS"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="inviasimapwssuccess" path="/WEB-INF/pages/w3/commons/popup-success-invia-simapws.jsp" module="/" />
+			<forward name="inviasimapwserror" path="/WEB-INF/pages/w3/commons/popup-invia-simapws.jsp" module="/" />
+		</action>
+
+		<action path="/AvviaPdfSIMAPWS"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="pdfsimapwscontrollo" path="/WEB-INF/pages/w3/commons/popup-validazione-simap.jsp" module="/" />
+			<forward name="pdfsimapwsinvia" path="/WEB-INF/pages/w3/commons/popup-pdf-simapws.jsp" module="/" />
+		</action>
+
+		<action path="/PdfSIMAPWS"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="pdfsimapwssuccess" path="/WEB-INF/pages/w3/commons/popup-success-pdf-simapws.jsp" module="/" />
+			<forward name="pdfsimapwserror" path="/WEB-INF/pages/w3/commons/popup-pdf-simapws.jsp" module="/" />
+		</action>
+		
+		<action path="/VisualizzaPermessiUtentiGruppi"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="visualizza" path="/WEB-INF/pages/w3/v_perm/v_perm-scheda.jsp" module="/" />
+		</action>
+
+		<action path="/ModificaPermessiUtentiGruppi"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false" >
+			<forward name="modifica" path="/WEB-INF/pages/w3/v_perm/v_perm-scheda.jsp" module="/" />
+		</action>
+		
+		<action path="/GetListaPermessiUtenti" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetListaPermessiGruppi" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/SetPermessi" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetListaUtentiGruppo" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetListaUtentiUnita" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetListaGruppiUnita" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GestioneAlberoUnitGrp" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetListaUnita" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+		
+		<action path="/GestioneAlberoCpvVP" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+		
+		<action path="/GestioneAlberoCpvVSUPP" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GestioneAlberoNUTS" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetStatoValidazioneSIMAP" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+		
+		<action path="/GetStatoValidazioneW3ANNEXBSIMAP" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/GetStatoValidazioneW3FS3AWARDSIMAP" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+		<action path="/SetW3SIMAPWSStato" type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" validate="false">
+		</action>
+
+	</action-mappings>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/xml/tiles/tiles-defs-gene-common.xml, /WEB-INF/xml/tiles/tiles-defs-gene-admin.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

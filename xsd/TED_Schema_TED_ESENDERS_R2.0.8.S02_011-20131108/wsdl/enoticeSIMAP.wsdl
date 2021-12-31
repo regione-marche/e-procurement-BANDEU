@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://service.ws.enotice.simap.eu/" xmlns:sch0="http://type.ws.enotice.simap.eu/"
+	xmlns:sch1="http://exception.ws.enotice.simap.eu/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	targetNamespace="http://service.ws.enotice.simap.eu/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:exp="http://exception.ws.enotice.simap.eu/" xmlns:tws="http://type.ws.enotice.simap.eu/"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://type.ws.enotice.simap.eu/">
+			<xs:element name="getNoticeStatusRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="submissionId" type="tws:submissionId" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticeStatusResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="noticeStatus" type="tws:noticeStatus" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="submitNoticeRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="notice" type="xs:base64Binary">
+							<xs:annotation>
+								<xs:documentation>This element contains the notice as XML encoded in base64</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="submitNoticeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="submissionId" type="tws:submissionId" />
+						<xs:element name="noticeStatus" type="tws:noticeStatus" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="parseNoticeRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="notice" type="xs:base64Binary">
+							<xs:annotation>
+								<xs:documentation>This element contains the notice as XML encoded in base64</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="parseNoticeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="parsingResult" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticeReportRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="submissionId" type="tws:submissionId" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticeReportResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="noticeReport" type="tws:noticeReport" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticesReportRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:element name="submissionDateInterval" type="tws:dateInterval">
+								<xs:annotation>
+									<xs:documentation>The element represents an interval of date to
+										retrieve notices based on the submission date. This interval
+										can not exceed 1 month.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="publicationDateInterval" type="tws:dateInterval">
+								<xs:annotation>
+									<xs:documentation>The element represents an interval of date to
+										retrieve notices based on the publication date. This interval
+										can not exceed 1 month.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:choice>
+						<xs:element minOccurs="0" name="statusCode" type="tws:statusCode" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticesReportResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="noticesReport">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="noticeReport" type="tws:noticeReport"
+										minOccurs="0" maxOccurs="unbounded" />
+								</xs:sequence>
+								<xs:attribute name="count" use="required" type="xs:int" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generatePdfRegulationRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:annotation>
+								<xs:documentation>In order to generate the PDF regulation of a
+									notice an XML file encoded in base64, or the submission id of a
+									notice could be provided.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:element name="notice" type="xs:base64Binary" />
+							<xs:element name="submissionId" type="tws:submissionId" />
+						</xs:choice>
+						<xs:element name="language" type="tws:language"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generatePdfRegulationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="pdf" type="xs:base64Binary">
+							<xs:annotation>
+								<xs:documentation>This element contains the notice as PDF
+									encoded in base64</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generatePdfTEDRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:annotation>
+								<xs:documentation>In order to generate the PDF TED of a notice
+									an XML file encoded in base64, or the submission id of a notice
+									could be provided.</xs:documentation>
+							</xs:annotation>
+							<xs:element name="notice" type="xs:base64Binary" />
+							<xs:element name="submissionId" type="tws:submissionId" />
+						</xs:choice>
+						<xs:element name="language" type="tws:language"
+							minOccurs="0" />
+						<xs:element name="coverPage" type="tws:yes-no"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generatePdfTEDResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="pdf" type="xs:base64Binary">
+							<xs:annotation>
+								<xs:documentation>This element contains the notice as PDF
+									encoded in base64</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generateHtmlTEDRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:annotation>
+								<xs:documentation>In order to generate the HTML TED of a notice
+									an XML file encoded in base64, or the submission id of a notice
+									could be provided.</xs:documentation>
+							</xs:annotation>
+							<xs:element name="notice" type="xs:base64Binary" />
+							<xs:element name="submissionId" type="tws:submissionId" />
+						</xs:choice>
+						<xs:element name="language" type="tws:language"
+							minOccurs="0" />
+						<xs:element name="coverPage" type="tws:yes-no"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generateHtmlTEDResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="html" type="xs:base64Binary">
+							<xs:annotation>
+								<xs:documentation>This element contains the notice as HTML
+									encoded in base64</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticesBeforePublicationRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="loginName" type="xs:string" />
+						<xs:element name="password" type="xs:string" />
+						<xs:element name="dateFrom" type="xs:date" />
+						<xs:element name="dateTo" type="xs:date" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticesBeforePublicationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="noticesBeforePublication">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="notice" type="tws:noticeOutputDto"
+										minOccurs="0" maxOccurs="unbounded" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticeBeforePublicationRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="loginName" type="xs:string" />
+						<xs:element name="password" type="xs:string" />
+						<xs:element name="noticeId" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getNoticeBeforePublicationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="notice" type="xs:base64Binary" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="noticeOutputDto">
+				<xs:sequence>
+					<xs:element name="noticeId" type="xs:string" />
+					<xs:element name="noticeOfficialTitle" type="xs:string" />
+					<xs:element name="noticeStatus" type="xs:string" />
+					<xs:element name="noticeTitle" type="xs:string" />
+					<xs:element name="noticeType" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="noticeStatus">
+				<xs:sequence>
+					<xs:element name="statusCode" type="tws:statusCode" />
+					<xs:element name="statusDescription" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="statusCode">
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="SUBMISSION_PENDING" />
+					<xs:enumeration value="SUBMITTED" />
+					<xs:enumeration value="PUBLISHED" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="dateInterval">
+				<xs:annotation>
+					<xs:documentation>This element represent an interval between two
+						dates.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="from" type="xs:date" />
+					<xs:element name="to" type="xs:date" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="noticeReport">
+				<xs:sequence>
+					<xs:element name="noDocExt" type="xs:string" />
+					<xs:element name="submissionDate" type="xs:dateTime" />
+					<xs:element name="reportDate" type="xs:date" />
+					<xs:element name="formType" type="xs:string" />
+					<xs:element name="languages" type="tws:languages"
+						maxOccurs="1" />
+					<xs:element name="officialTitles" type="tws:officialTitles"
+						maxOccurs="1" />
+					<xs:element name="noticeStatus" type="tws:noticeStatus" />
+					<xs:element name="publicationInfo" type="tws:publicationInfo"
+						minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute name="submissionId" use="required"
+					type="tws:submissionId" />
+			</xs:complexType>
+			<xs:complexType name="publicationInfo">
+				<xs:sequence>
+					<xs:element name="ojsNumber" type="xs:string" />
+					<xs:element name="publicationDate" type="xs:date" />
+					<xs:element name="noDocOjs" type="xs:string" />
+					<xs:element name="tedLinks" type="tws:tedLinks"
+						maxOccurs="1" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="submissionId">
+				<xs:restriction base="xs:string">
+					<xs:pattern
+						value="[A-Za-z0-9_]{5,8}([A-Za-z0-9_]{1,30})?-(19|20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])-[0-9]{4}">
+						<xs:annotation>
+							<xs:documentation>Example of valid submission Id :
+								ESENDERLOGIN-20110101-0001</xs:documentation>
+						</xs:annotation>
+					</xs:pattern>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="tedLinks">
+				<xs:sequence>
+					<xs:element name="tedLink" type="tws:tedLink" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="tedLink" mixed="true">
+				<xs:attribute name="language" use="required" type="tws:language" />
+			</xs:complexType>
+			<xs:complexType name="officialTitles">
+				<xs:sequence>
+					<xs:element name="officialTitles" type="tws:officialTitle"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="officialTitle" mixed="true">
+				<xs:attribute name="language" use="required" type="tws:language" />
+			</xs:complexType>
+			<xs:complexType name="languages">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="language" type="tws:language" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="language">
+				<xs:annotation>
+					<xs:documentation>List of the 24 languages ISO code of the EU
+					</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="BG" />
+					<xs:enumeration value="CS" />
+					<xs:enumeration value="DA" />
+					<xs:enumeration value="DE" />
+					<xs:enumeration value="ET" />
+					<xs:enumeration value="EL" />
+					<xs:enumeration value="EN" />
+					<xs:enumeration value="ES" />
+					<xs:enumeration value="FR" />
+					<xs:enumeration value="GA" />
+					<xs:enumeration value="HR" />
+					<xs:enumeration value="IT" />
+					<xs:enumeration value="LV" />
+					<xs:enumeration value="LT" />
+					<xs:enumeration value="HU" />
+					<xs:enumeration value="MT" />
+					<xs:enumeration value="NL" />
+					<xs:enumeration value="PL" />
+					<xs:enumeration value="PT" />
+					<xs:enumeration value="RO" />
+					<xs:enumeration value="SK" />
+					<xs:enumeration value="SL" />
+					<xs:enumeration value="FI" />
+					<xs:enumeration value="SV" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="yes-no">
+				<xs:annotation>
+					<xs:documentation>The yes-no type is used for boolean-like
+						attributes.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="yes" />
+					<xs:enumeration value="no" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://exception.ws.enotice.simap.eu/"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://exception.ws.enotice.simap.eu/">
+			<xs:element name="applicationErrorFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="errorCode" type="tns:errorCode">
+							<xs:annotation>
+								<xs:documentation>This is the error code linked to the
+									application error</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="errorDescription" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>This is the complete description of the
+									application error</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="errorCode">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ERR_00">
+						<xs:annotation>
+							<xs:documentation>This is the code in case of general error
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_01">
+						<xs:annotation>
+							<xs:documentation>This is the code in case of security error
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_02">
+						<xs:annotation>
+							<xs:documentation>This is the code in case a service is disabled
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_03">
+						<xs:annotation>
+							<xs:documentation>This is the code in case the user is not
+								allowed to access this service</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+
+					<xs:enumeration value="ERR_04">
+						<xs:annotation>
+							<xs:documentation>This is the code in case a service is
+								unavailable</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_05">
+						<xs:annotation>
+							<xs:documentation>This is the code in case a notice has not been
+								found</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_06">
+						<xs:annotation>
+							<xs:documentation>This is the code in case the XSD version is not
+								supported</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_07">
+						<xs:annotation>
+							<xs:documentation>This is the code in case a notice could not be
+								parsed</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_08">
+						<xs:annotation>
+							<xs:documentation>This is in case the content of the SENDER tag
+								of the submitted notice is not correct</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ERR_09">
+						<xs:annotation>
+							<xs:documentation>This is the code in case wrong parameters has
+								been provided</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="generatePdfTEDRequest">
+		<wsdl:part element="sch0:generatePdfTEDRequest" name="generatePdfTEDRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="generateHtmlTEDRequest">
+		<wsdl:part element="sch0:generateHtmlTEDRequest" name="generateHtmlTEDRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticesReportResponse">
+		<wsdl:part element="sch0:getNoticesReportResponse" name="getNoticesReportResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticeBeforePublicationResponse">
+		<wsdl:part element="sch0:getNoticeBeforePublicationResponse"
+			name="getNoticeBeforePublicationResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="parseNoticeResponse">
+		<wsdl:part element="sch0:parseNoticeResponse" name="parseNoticeResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="submitNoticeRequest">
+		<wsdl:part element="sch0:submitNoticeRequest" name="submitNoticeRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="generatePdfTEDResponse">
+		<wsdl:part element="sch0:generatePdfTEDResponse" name="generatePdfTEDResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="generateHtmlTEDResponse">
+		<wsdl:part element="sch0:generateHtmlTEDResponse" name="generateHtmlTEDResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="generatePdfRegulationRequest">
+		<wsdl:part element="sch0:generatePdfRegulationRequest" name="generatePdfRegulationRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticeBeforePublicationRequest">
+		<wsdl:part element="sch0:getNoticeBeforePublicationRequest"
+			name="getNoticeBeforePublicationRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticesBeforePublicationResponse">
+		<wsdl:part element="sch0:getNoticesBeforePublicationResponse"
+			name="getNoticesBeforePublicationResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="submitNoticeResponse">
+		<wsdl:part element="sch0:submitNoticeResponse" name="submitNoticeResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticeStatusRequest">
+		<wsdl:part element="sch0:getNoticeStatusRequest" name="getNoticeStatusRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticeReportResponse">
+		<wsdl:part element="sch0:getNoticeReportResponse" name="getNoticeReportResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="parseNoticeRequest">
+		<wsdl:part element="sch0:parseNoticeRequest" name="parseNoticeRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="generatePdfRegulationResponse">
+		<wsdl:part element="sch0:generatePdfRegulationResponse"
+			name="generatePdfRegulationResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticesReportRequest">
+		<wsdl:part element="sch0:getNoticesReportRequest" name="getNoticesReportRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticeReportRequest">
+		<wsdl:part element="sch0:getNoticeReportRequest" name="getNoticeReportRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="applicationErrorFault">
+		<wsdl:part element="sch1:applicationErrorFault" name="applicationErrorFault">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticeStatusResponse">
+		<wsdl:part element="sch0:getNoticeStatusResponse" name="getNoticeStatusResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNoticesBeforePublicationRequest">
+		<wsdl:part element="sch0:getNoticesBeforePublicationRequest"
+			name="getNoticesBeforePublicationRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ENoticeServicePort">
+		<wsdl:operation name="generatePdfTED">
+			<wsdl:input message="tns:generatePdfTEDRequest" name="generatePdfTEDRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:generatePdfTEDResponse" name="generatePdfTEDResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="generateHtmlTED">
+			<wsdl:input message="tns:generateHtmlTEDRequest" name="generateHtmlTEDRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:generateHtmlTEDResponse" name="generateHtmlTEDResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticesReport">
+			<wsdl:input message="tns:getNoticesReportRequest" name="getNoticesReportRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getNoticesReportResponse" name="getNoticesReportResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticeBeforePublication">
+			<wsdl:input message="tns:getNoticeBeforePublicationRequest"
+				name="getNoticeBeforePublicationRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getNoticeBeforePublicationResponse"
+				name="getNoticeBeforePublicationResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="parseNotice">
+			<wsdl:input message="tns:parseNoticeRequest" name="parseNoticeRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:parseNoticeResponse" name="parseNoticeResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="submitNotice">
+			<wsdl:input message="tns:submitNoticeRequest" name="submitNoticeRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:submitNoticeResponse" name="submitNoticeResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="generatePdfRegulation">
+			<wsdl:input message="tns:generatePdfRegulationRequest"
+				name="generatePdfRegulationRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:generatePdfRegulationResponse"
+				name="generatePdfRegulationResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticesBeforePublication">
+			<wsdl:input message="tns:getNoticesBeforePublicationRequest"
+				name="getNoticesBeforePublicationRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getNoticesBeforePublicationResponse"
+				name="getNoticesBeforePublicationResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticeStatus">
+			<wsdl:input message="tns:getNoticeStatusRequest" name="getNoticeStatusRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getNoticeStatusResponse" name="getNoticeStatusResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticeReport">
+			<wsdl:input message="tns:getNoticeReportRequest" name="getNoticeReportRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getNoticeReportResponse" name="getNoticeReportResponse">
+			</wsdl:output>
+			<wsdl:fault message="tns:applicationErrorFault" name="applicationErrorFault">
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ENoticeServicePortSoap11" type="tns:ENoticeServicePort">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="generatePdfTED">
+			<soap:operation soapAction="" />
+			<wsdl:input name="generatePdfTEDRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="generatePdfTEDResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="generateHtmlTED">
+			<soap:operation soapAction="" />
+			<wsdl:input name="generateHtmlTEDRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="generateHtmlTEDResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticesReport">
+			<soap:operation soapAction="" />
+			<wsdl:input name="getNoticesReportRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getNoticesReportResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticeBeforePublication">
+			<soap:operation soapAction="" />
+			<wsdl:input name="getNoticeBeforePublicationRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getNoticeBeforePublicationResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="parseNotice">
+			<soap:operation soapAction="" />
+			<wsdl:input name="parseNoticeRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="parseNoticeResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="submitNotice">
+			<soap:operation soapAction="" />
+			<wsdl:input name="submitNoticeRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="submitNoticeResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="generatePdfRegulation">
+			<soap:operation soapAction="" />
+			<wsdl:input name="generatePdfRegulationRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="generatePdfRegulationResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticesBeforePublication">
+			<soap:operation soapAction="" />
+			<wsdl:input name="getNoticesBeforePublicationRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getNoticesBeforePublicationResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticeStatus">
+			<soap:operation soapAction="" />
+			<wsdl:input name="getNoticeStatusRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getNoticeStatusResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getNoticeReport">
+			<soap:operation soapAction="" />
+			<wsdl:input name="getNoticeReportRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getNoticeReportResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="applicationErrorFault">
+				<soap:fault name="applicationErrorFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ENoticeServicePortService">
+		<wsdl:port binding="tns:ENoticeServicePortSoap11" name="ENoticeServicePortSoap11">
+			<soap:address location="http://localhost:8080/eNoticeWs/ENoticeService-1.0" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+####################################################################################
+#  XSD name : TED_ESENDERS  (.xsd) 
+#  RELEASE : "R2.0.8.S02"
+#  Intermediate release number 011-20131108
+#  Last update :20/02/2012
+####################################################################################
+ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://publications.europa.eu/TED_schema/Reception" targetNamespace="http://publications.europa.eu/TED_schema/Reception" elementFormDefault="qualified" attributeFormDefault="unqualified" version="R2.0.8.S02">
+	<!-- *********************************** -->
+	<!-- include schemas                    -->
+	<!-- *********************************** -->
+	<xs:include schemaLocation="TED_ESENDERS.xd"/>
+</xs:schema>

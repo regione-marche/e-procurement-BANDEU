@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CpvAdditionalMain" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ent" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3CPV.NUMCPV AS W3CPV_NUMCPV,
+     W3CPV.ENT AS W3CPV_ENT,
+     W3CPV.ID AS W3CPV_ID,
+     W3CPV.NUM AS W3CPV_NUM,
+     W3CPV.TIPCPV AS W3CPV_TIPCPV,
+     W3CPV.CPV AS W3CPV_CPV,
+     W3CPV.CPVSUPP1 AS W3CPV_CPVSUPP1,
+     W3CPV.CPVSUPP2 AS W3CPV_CPVSUPP2
+FROM
+     W3CPV
+WHERE
+     W3CPV.ENT = $P{ent}
+AND  W3CPV.ID = $P{id}
+AND  W3CPV.NUM = -1]]>
+	</queryString>
+	<field name="W3CPV_NUMCPV" class="java.math.BigDecimal"/>
+	<field name="W3CPV_ENT" class="java.lang.String"/>
+	<field name="W3CPV_ID" class="java.math.BigDecimal"/>
+	<field name="W3CPV_NUM" class="java.math.BigDecimal"/>
+	<field name="W3CPV_TIPCPV" class="java.math.BigDecimal"/>
+	<field name="W3CPV_CPV" class="java.lang.String"/>
+	<field name="W3CPV_CPVSUPP1" class="java.lang.String"/>
+	<field name="W3CPV_CPVSUPP2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="225" y="0" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3CPV_CPV}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="395" y="0" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3CPV_CPVSUPP1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="475" y="0" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3CPV_CPVSUPP2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="3" y="0" width="222" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Oggetto complementare:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

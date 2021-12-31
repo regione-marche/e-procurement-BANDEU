@@ -1,0 +1,120 @@
+	.jstree-classic a { 
+		white-space:normal !important; height: auto !important;
+	}
+	
+	.jstree-anchor {
+		height: auto !important;
+	}
+	
+	.jstree-classic li > ins { 
+		vertical-align:top; 
+	}
+	
+	.jstree-leaf {
+		height: auto;
+	}
+	
+	.jstree-leaf a {
+		height: auto !important;
+	}
+
+	SPAN.cpvvptitolo {
+		font-size: 13px;
+  		font-weight: bold;
+  		margin: 10px;
+  		color: #002856;
+	}
+
+	SPAN.linkcpvvp {
+		margin-left:10px;
+		vertical-align: middle;
+		height: 18px;
+		display:inline-block;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+
+	SPAN.linkdelcpvvp {
+		margin-left:16px;
+		vertical-align: middle;
+		height: 18px;
+		display:inline-block;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	TABLE.cpvvpcontainer {
+		font: 11px Verdana, Arial, Helvetica, sans-serif;
+		margin: 0;
+		margin-top: 5px !important;
+		margin-bottom: 5px !important;
+		padding: 0px !important;
+		width: 100%;
+		font-size: 11px;
+		border-collapse: collapse;
+		border: 0px;
+		border-bottom: 0px solid #C0C0C0 !important;
+	}
+
+	TABLE.cpvvpcontainer TR {
+		background-color: #FFFFFF;
+	}
+
+	TABLE.cpvvpcontainer TR TD{
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+		padding-right: 10px !important;
+		padding-left: 10px !important;
+		text-align: left;
+		border-top: 1px solid #C0C0C0 !important;
+		height: 18px;
+	}
+	
+	TABLE.cpvvpcontainer TR TD.etichetta {
+		background-color: #EFEFEF;
+		text-align: right;
+	}
+	
+	SPAN.cpvvpdeletesearch {
+		vertical-align: middle;
+		height: 18px;
+		display:inline-block;
+		width: 30px;
+		background: url(cancellaFiltro.gif) no-repeat;
+		background-size: 16px 16px;
+		margin-left: 5px;
+	}
+
+	SPAN.openfolder {
+		vertical-align: middle;
+		height: 18px;
+		display:inline-block;
+		width: 20px;
+		background: url(open_folder.gif) no-repeat;
+		background-size: 16px 16px;
+	}
+
+	DIV.cpvvptree {
+		width:800px;
+		min-height: 300px;
+		padding-left: 0px;
+		margin-left: 0px;
+	}
+	
+	DIV.cpvvpmessaggio {
+		font: 11px Verdana, Arial, Helvetica, sans-serif;
+		margin-left: 10px;
+		margin-right: 30px;
+	}
+	
+	.ui-widget-overlay { 
+		background: rgb(256, 256, 256); opacity: .50; filter:Alpha(Opacity=50);
+	}
+	
+	li[tiponodo='CPV'] > a {
+		background-color: #E3FFC1;
+	}
+
+	
+	

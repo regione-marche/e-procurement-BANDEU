@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:impl="http://ws.simap.eldasoft.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EldasoftSimapWS" targetNamespace="http://ws.simap.eldasoft.it/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://ws.simap.eldasoft.it/">
+			<xsd:element name="inserisciAvvisoPreinformazione">
+				<xsd:complexType>
+					<xsd:sequence>
+					    <xsd:element maxOccurs="1" minOccurs="1" name="login" type="xsd:string"/>
+      					<xsd:element maxOccurs="1" minOccurs="1" name="password" type="xsd:string"/>
+						<xsd:element maxOccurs="1" minOccurs="1" name="datiXML" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciAvvisoPreinformazioneResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+     					<xsd:element name="esito" type="impl:esitoSimapWS"/>					
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>		
+			<xsd:element name="inserisciBandoGara">
+				<xsd:complexType>
+					<xsd:sequence>
+					    <xsd:element maxOccurs="1" minOccurs="1" name="login" type="xsd:string"/>
+      					<xsd:element maxOccurs="1" minOccurs="1" name="password" type="xsd:string"/>
+						<xsd:element maxOccurs="1" minOccurs="1" name="datiXML" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciBandoGaraResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+     					<xsd:element name="esito" type="impl:esitoSimapWS"/>					
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciAvvisoAggiudicazione">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="login" type="xsd:string"/>
+      					<xsd:element maxOccurs="1" minOccurs="1" name="password" type="xsd:string"/>
+						<xsd:element maxOccurs="1" minOccurs="1" name="datiXML" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciAvvisoAggiudicazioneResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+     					<xsd:element name="esito" type="impl:esitoSimapWS"/>		
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciAvvisoProfiloCommittente">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="login" type="xsd:string"/>
+      					<xsd:element maxOccurs="1" minOccurs="1" name="password" type="xsd:string"/>
+						<xsd:element maxOccurs="1" minOccurs="1" name="datiXML" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciAvvisoProfiloCommittenteResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+     					<xsd:element name="esito" type="impl:esitoSimapWS"/>		
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciBandoGaraSemplificato">
+				<xsd:complexType>
+					<xsd:sequence>
+					    <xsd:element maxOccurs="1" minOccurs="1" name="login" type="xsd:string"/>
+      					<xsd:element maxOccurs="1" minOccurs="1" name="password" type="xsd:string"/>
+						<xsd:element maxOccurs="1" minOccurs="1" name="datiXML" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inserisciBandoGaraSemplificatoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+     					<xsd:element name="esito" type="impl:esitoSimapWS"/>					
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="esitoSimapWS">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="esito" type="xsd:boolean"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="messaggio" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="inserisciAvvisoPreinformazioneRequest">
+		<wsdl:part element="impl:inserisciAvvisoPreinformazione" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciAvvisoPreinformazioneResponse">
+		<wsdl:part element="impl:inserisciAvvisoPreinformazioneResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciBandoGaraRequest">
+		<wsdl:part element="impl:inserisciBandoGara" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciBandoGaraResponse">
+		<wsdl:part element="impl:inserisciBandoGaraResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciAvvisoAggiudicazioneRequest">
+		<wsdl:part element="impl:inserisciAvvisoAggiudicazione" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciAvvisoAggiudicazioneResponse">
+		<wsdl:part element="impl:inserisciAvvisoAggiudicazioneResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciAvvisoProfiloCommittenteRequest">
+		<wsdl:part element="impl:inserisciAvvisoProfiloCommittente" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciAvvisoProfiloCommittenteResponse">
+		<wsdl:part element="impl:inserisciAvvisoProfiloCommittenteResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciBandoGaraSemplificatoRequest">
+		<wsdl:part element="impl:inserisciBandoGaraSemplificato" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="inserisciBandoGaraSemplificatoResponse">
+		<wsdl:part element="impl:inserisciBandoGaraSemplificatoResponse" name="parameters"/>
+	</wsdl:message>
+
+
+	<wsdl:portType name="EldasoftSimapWS">
+		<wsdl:operation name="inserisciAvvisoPreinformazione">
+			<wsdl:input message="impl:inserisciAvvisoPreinformazioneRequest"/>
+			<wsdl:output message="impl:inserisciAvvisoPreinformazioneResponse"/>
+		</wsdl:operation>	
+		<wsdl:operation name="inserisciBandoGara">
+			<wsdl:input message="impl:inserisciBandoGaraRequest"/>
+			<wsdl:output message="impl:inserisciBandoGaraResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciAvvisoAggiudicazione">
+			<wsdl:input message="impl:inserisciAvvisoAggiudicazioneRequest"/>
+			<wsdl:output message="impl:inserisciAvvisoAggiudicazioneResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciAvvisoProfiloCommittente">
+			<wsdl:input message="impl:inserisciAvvisoProfiloCommittenteRequest"/>
+			<wsdl:output message="impl:inserisciAvvisoProfiloCommittenteResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciBandoGaraSemplificato">
+			<wsdl:input message="impl:inserisciBandoGaraSemplificatoRequest"/>
+			<wsdl:output message="impl:inserisciBandoGaraSemplificatoResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="EldasoftSimapWSBinding" type="impl:EldasoftSimapWS">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="inserisciAvvisoPreinformazione">
+			<soap:operation soapAction="http://ws.simap.eldasoft.it/inserisciAvvisoPreinformazione"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciBandoGara">
+			<soap:operation soapAction="http://ws.simap.eldasoft.it/inserisciBandoGara"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciAvvisoAggiudicazione">
+			<soap:operation soapAction="http://ws.simap.eldasoft.it/inserisciAvvisoAggiudicazione"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciAvvisoProfiloCommittente">
+			<soap:operation soapAction="http://ws.simap.eldasoft.it/inserisciAvvisoProfiloCommittente"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserisciBandoGaraSemplificato">
+			<soap:operation soapAction="http://ws.simap.eldasoft.it/inserisciBandoGaraSemplificato"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>		
+	</wsdl:binding>
+
+	<wsdl:service name="EldasoftSimapWSService">
+		<wsdl:port binding="impl:EldasoftSimapWSBinding" name="EldasoftSimapWS">
+			<soap:address location="http://localhost:8080/SchedeAutorita/services/EldasoftSimapWS"/>
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>
