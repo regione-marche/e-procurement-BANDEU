@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TipoAmministrazioneSpeciali" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1"/>
+	<parameter name="codamm" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Programmi\\Jaspersoft\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="formulario" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3AMMI.CODAMM AS W3AMMI_CODAMM,
+     W3AMMI.TYPE_AUTHORITY AS W3AMMI_TYPE_AUTHORITY,
+     W3AMMI.TYPE_AUTHORITY_OTHER AS W3AMMI_TYPE_AUTHORITY_OTHER,
+     W3AMMI.GENERAL_PUBLIC_SERVICES AS W3AMMI_GENERAL_PUBLIC_SERVICES,
+     W3AMMI.CODEIN AS W3AMMI_CODEIN,
+     W3AMMI.RECREATION_CULTURE AS W3AMMI_RECREATION_CULTURE,
+     W3AMMI.SOCIAL_PROTECTION AS W3AMMI_SOCIAL_PROTECTION,
+     W3AMMI.EDUCATION AS W3AMMI_EDUCATION,
+     W3AMMI.HEALTH AS W3AMMI_HEALTH,
+     W3AMMI.ENVIRONMENT AS W3AMMI_ENVIRONMENT,
+     W3AMMI.PUBLIC_ORDER_AND_SAFETY AS W3AMMI_PUBLIC_ORDER_AND_SAFETY,
+     W3AMMI.HOUSING_AND_COMMUNITY AS W3AMMI_HOUSING_AND_COMMUNITY,
+     W3AMMI.DEFENCE AS W3AMMI_DEFENCE,
+     W3AMMI.ECONOMIC_AND_FINANCIAL_AFFAIRS AS W3AMMI_ECONOMIC_AND_FINANCIAL_,
+     W3AMMI.TYPE_ACTIVITY_OTHER AS W3AMMI_TYPE_ACTIVITY_OTHER,
+     W3AMMI.RAILWAY_SERVICES AS W3AMMI_RAILWAY_SERVICES,
+     W3AMMI.POSTAL_SERVICES AS W3AMMI_POSTAL_SERVICES,
+     W3AMMI.EXPLORATION_EXTRACTION AS W3AMMI_EXPLORATION_EXTRACTION,
+     W3AMMI.PORT_RELATED_ACTIVITIES AS W3AMMI_PORT_RELATED_ACTIVITIES,
+     W3AMMI.WATER AS W3AMMI_WATER,
+     W3AMMI.ELECTRICITY AS W3AMMI_ELECTRICITY,
+     W3AMMI.AIRPORT_RELATED_ACTIVITIES AS W3AMMI_AIRPORT_RELATED_ACTIVIT,
+     W3AMMI.URBAN_RAILWAY_TRAMWAY AS W3AMMI_URBAN_RAILWAY_TRAMWAY,
+     W3AMMI.EXPLORATION_GAS_OIL AS W3AMMI_EXPLORATION_GAS_OIL,
+     W3AMMI.PRODUCTION_TRANSPORT_GAS AS W3AMMI_PRODUCTION_TRANSPORT_GA,
+     W3AMMI.PURCHASING_BEHALF AS W3AMMI_PURCHASING_BEHALF
+FROM
+     W3AMMI
+WHERE
+     w3ammi.codamm = $P{codamm}]]>
+	</queryString>
+	<field name="W3AMMI_CODAMM" class="java.lang.String"/>
+	<field name="W3AMMI_TYPE_AUTHORITY" class="java.lang.String"/>
+	<field name="W3AMMI_TYPE_AUTHORITY_OTHER" class="java.lang.String"/>
+	<field name="W3AMMI_GENERAL_PUBLIC_SERVICES" class="java.lang.String"/>
+	<field name="W3AMMI_CODEIN" class="java.lang.String"/>
+	<field name="W3AMMI_RECREATION_CULTURE" class="java.lang.String"/>
+	<field name="W3AMMI_SOCIAL_PROTECTION" class="java.lang.String"/>
+	<field name="W3AMMI_EDUCATION" class="java.lang.String"/>
+	<field name="W3AMMI_HEALTH" class="java.lang.String"/>
+	<field name="W3AMMI_ENVIRONMENT" class="java.lang.String"/>
+	<field name="W3AMMI_PUBLIC_ORDER_AND_SAFETY" class="java.lang.String"/>
+	<field name="W3AMMI_HOUSING_AND_COMMUNITY" class="java.lang.String"/>
+	<field name="W3AMMI_DEFENCE" class="java.lang.String"/>
+	<field name="W3AMMI_ECONOMIC_AND_FINANCIAL_" class="java.lang.String"/>
+	<field name="W3AMMI_TYPE_ACTIVITY_OTHER" class="java.lang.String"/>
+	<field name="W3AMMI_RAILWAY_SERVICES" class="java.lang.String"/>
+	<field name="W3AMMI_POSTAL_SERVICES" class="java.lang.String"/>
+	<field name="W3AMMI_EXPLORATION_EXTRACTION" class="java.lang.String"/>
+	<field name="W3AMMI_PORT_RELATED_ACTIVITIES" class="java.lang.String"/>
+	<field name="W3AMMI_WATER" class="java.lang.String"/>
+	<field name="W3AMMI_ELECTRICITY" class="java.lang.String"/>
+	<field name="W3AMMI_AIRPORT_RELATED_ACTIVIT" class="java.lang.String"/>
+	<field name="W3AMMI_URBAN_RAILWAY_TRAMWAY" class="java.lang.String"/>
+	<field name="W3AMMI_EXPLORATION_GAS_OIL" class="java.lang.String"/>
+	<field name="W3AMMI_PRODUCTION_TRANSPORT_GA" class="java.lang.String"/>
+	<field name="W3AMMI_PURCHASING_BEHALF" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="139" splitType="Stretch">
+			<staticText>
+				<reportElement x="267" y="44" width="241" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Acqua:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.3) Principali settori di attività dell'ente aggiudicatore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="555" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS8")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(nel caso di un avviso indicativo periodico pubblicato conformemente alla direttiva 2004/17/CE - "Settori Speciali")]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="555" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS9")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(nel caso di un appalto disciplinato dalla direttiva 2004/17/CE - "Settori Speciali")]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="238" y="44" width="29" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_PRODUCTION_TRANSPORT_GA}==null ? "--" :($F{W3AMMI_PRODUCTION_TRANSPORT_GA}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="59" width="29" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_ELECTRICITY}==null ? "--" :($F{W3AMMI_ELECTRICITY}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="74" width="29" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_EXPLORATION_GAS_OIL}==null ? "--" :($F{W3AMMI_EXPLORATION_GAS_OIL}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="89" width="29" height="30" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_EXPLORATION_EXTRACTION}==null ? "--" :($F{W3AMMI_EXPLORATION_EXTRACTION}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="44" width="30" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_WATER}==null ? "--" :($F{W3AMMI_WATER}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="59" width="30" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_POSTAL_SERVICES}==null ? "--" :($F{W3AMMI_POSTAL_SERVICES}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="74" width="30" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_RAILWAY_SERVICES}==null ? "--" :($F{W3AMMI_RAILWAY_SERVICES}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="89" width="30" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_URBAN_RAILWAY_TRAMWAY}==null ? "--" :($F{W3AMMI_URBAN_RAILWAY_TRAMWAY}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="104" width="30" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_PORT_RELATED_ACTIVITIES}==null ? "--" :($F{W3AMMI_PORT_RELATED_ACTIVITIES}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="119" width="30" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3AMMI_AIRPORT_RELATED_ACTIVIT}==null ? "--" :($F{W3AMMI_AIRPORT_RELATED_ACTIVIT}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="44" width="238" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Produzione, trasporto e distribuzione di gas e calore:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="238" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Elettricità:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="74" width="238" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Esplorazione ed estrazione di gas e petrolio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="238" height="30" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Esplorazione ed estrazione di carbone e altri combustribili solidi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="59" width="241" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi postali:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="74" width="241" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi ferroviari:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="104" width="241" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Attività connesse ai porti:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="89" width="241" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi di ferrovia urbana, tram, filobus o bus:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="119" width="241" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Attività connesse agli aeroporti:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

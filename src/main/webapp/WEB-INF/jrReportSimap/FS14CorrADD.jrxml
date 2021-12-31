@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FS14CorrAdd" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="AliceResources">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Programmi\\Jaspersoft\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3FS14CORR.ID AS W3FS14CORR_ID,
+     W3FS14CORR.NUM AS W3FS14CORR_NUM,
+     W3FS14CORR.TYPE AS W3FS14CORR_TYPE,
+     W3FS14CORR.OBJECT AS W3FS14CORR_OBJECT,
+     W3FS14CORR.SECTION AS W3FS14CORR_SECTION,
+     W3FS14CORR.TEXT_OLD AS W3FS14CORR_TEXT_OLD,
+     W3FS14CORR.TEXT_NEW AS W3FS14CORR_TEXT_NEW,
+     W3FS14CORR.DATE_OLD AS W3FS14CORR_DATE_OLD,
+     W3FS14CORR.DATE_NEW AS W3FS14CORR_DATE_NEW,
+     W3FS14CORR.TIME_OLD AS W3FS14CORR_TIME_OLD,
+     W3FS14CORR.TIME_NEW AS W3FS14CORR_TIME_NEW,
+     W3FS14CORR.NUTS_OLD AS W3FS14CORR_NUTS_OLD,
+     W3FS14CORR.NUTS_NEW AS W3FS14CORR_NUTS_NEW,
+     W3FS14CORR.CPV_OLD AS W3FS14CORR_CPV_OLD,
+     W3FS14CORR.CPV_NEW AS W3FS14CORR_CPV_NEW,
+     W3FS14CORR.CPVSUPP1_OLD AS W3FS14CORR_CPVSUPP1_OLD,
+     W3FS14CORR.CPVSUPP1_NEW AS W3FS14CORR_CPVSUPP1_NEW,
+     W3FS14CORR.CPVSUPP2_OLD AS W3FS14CORR_CPVSUPP2_OLD,
+     W3FS14CORR.CPVSUPP2_NEW AS W3FS14CORR_CPVSUPP2_NEW,
+     W3FS14CORR.CODEIN_NEW AS W3FS14CORR_CODEIN_NEW,
+     W3FS14CORR.NOMEIN_NEW AS W3FS14CORR_NOMEIN_NEW
+FROM
+     W3FS14CORR
+WHERE
+     W3FS14CORR.ID = $P{id}
+AND  W3FS14CORR.TYPE = 'ADD'
+ORDER BY W3FS14CORR.NUM]]>
+	</queryString>
+	<field name="W3FS14CORR_ID" class="java.math.BigDecimal"/>
+	<field name="W3FS14CORR_NUM" class="java.math.BigDecimal"/>
+	<field name="W3FS14CORR_TYPE" class="java.lang.String"/>
+	<field name="W3FS14CORR_OBJECT" class="java.lang.String"/>
+	<field name="W3FS14CORR_SECTION" class="java.lang.String"/>
+	<field name="W3FS14CORR_TEXT_OLD" class="java.lang.String"/>
+	<field name="W3FS14CORR_TEXT_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_DATE_OLD" class="java.sql.Timestamp"/>
+	<field name="W3FS14CORR_DATE_NEW" class="java.sql.Timestamp"/>
+	<field name="W3FS14CORR_TIME_OLD" class="java.lang.String"/>
+	<field name="W3FS14CORR_TIME_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_NUTS_OLD" class="java.lang.String"/>
+	<field name="W3FS14CORR_NUTS_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_CPV_OLD" class="java.lang.String"/>
+	<field name="W3FS14CORR_CPV_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_CPVSUPP1_OLD" class="java.lang.String"/>
+	<field name="W3FS14CORR_CPVSUPP1_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_CPVSUPP2_OLD" class="java.lang.String"/>
+	<field name="W3FS14CORR_CPVSUPP2_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_CODEIN_NEW" class="java.lang.String"/>
+	<field name="W3FS14CORR_NOMEIN_NEW" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="20">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" backcolor="#E6E6E6"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informazioni da aggiungere]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="85" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="213" y="60" width="40" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("CPV") || $F{W3FS14CORR_OBJECT}.equals("CPVA")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS14CORR_CPVSUPP2_NEW}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="60" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("CPV") || $F{W3FS14CORR_OBJECT}.equals("CPVA")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CPV:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement positionType="Float" x="3" y="5" width="6" height="6" forecolor="#FFFFFF" backcolor="#000000"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="30" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("DATE")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Data/ora:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="173" y="60" width="40" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("CPV") || $F{W3FS14CORR_OBJECT}.equals("CPVA")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS14CORR_CPVSUPP1_NEW}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="15" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("TEXT")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Testo:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="15" width="458" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("TEXT")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS14CORR_TEXT_NEW}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="168" y="30" width="45" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("DATE")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS14CORR_TIME_NEW}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="45" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("NUTS")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NUTS:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="45" width="74" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("NUTS")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS14CORR_NUTS_NEW}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="60" width="76" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("CPV") || $F{W3FS14CORR_OBJECT}.equals("CPVA")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS14CORR_CPV_NEW}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="30" width="74" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS14CORR_OBJECT}.equals("DATE")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS14CORR_DATE_NEW}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="10" y="0" width="529" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_RESOURCE_BUNDLE}.getObject( $F{W3FS14CORR_SECTION} )]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

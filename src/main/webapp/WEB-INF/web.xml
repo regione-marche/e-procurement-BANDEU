@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="GENE_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>Alice Comunicazioni</display-name>
+
+	<description>
+		Alice Comunicazioni
+	</description>
+
+	<filter>
+		<filter-name>ResponseOverrideFilter</filter-name>
+		<filter-class>
+			org.displaytag.filter.ResponseOverrideFilter
+		</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>CustomerContextFilter</filter-name>
+		<filter-class>
+			it.eldasoft.gene.commons.web.CustomerContextFilter
+		</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>ResponseOverrideFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>ResponseOverrideFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>CustomerContextFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>CustomerContextFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+	<!--
+		Key of the system property that should specify the root directory of this
+		web app. Applied by WebAppRootListener or Log4jConfigListener.
+	-->
+	<!-- 
+		<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>gene.root</param-value>
+		</context-param>
+	-->
+
+	<!--
+		Location of the XML file that defines the root application context.
+		Applied by ContextLoaderServlet.
+	-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/xml/spring/application-context.xml,
+			/WEB-INF/xml/spring/tasks.xml,
+			/WEB-INF/xml/spring/gene-common.xml,
+			/WEB-INF/xml/spring/gene-admin.xml,
+			/WEB-INF/xml/spring/gene-genric.xml,
+			/WEB-INF/xml/spring/gene-genmod.xml,
+			/WEB-INF/xml/spring/gene-schedric.xml,
+			/WEB-INF/xml/spring/w3.xml
+		</param-value>
+	</context-param>
+
+	<!--
+		Location of the Log4J config file, for initialization and refresh checks.
+		Applied by Log4jConfigListener.
+	-->
+	<!-- 
+		<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/log4j.properties</param-value>
+		</context-param>
+	-->
+
+	<!--
+		- Configures Log4J for this web app.
+		- As this context specifies a context-param "log4jConfigLocation", its file path
+		- is used to load the Log4J configuration, including periodic refresh checks.
+		-
+		- Would fall back to default Log4J initialization (non-refreshing) if no special
+		- context-params are given.
+		-
+		- Exports a "web app root key", i.e. a system property that specifies the root
+		- directory of this web app, for usage in log file paths.
+		- This web app specifies "petclinic.root" (see log4j.properties file).
+	-->
+	<!-- Leave the listener commented-out if using JBoss -->
+	<!--
+		<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+		</listener>
+	-->
+
+	<!--
+		- Loads the root application context of this web app at startup,
+		- by default from "/WEB-INF/applicationContext.xml".
+		- Note that you need to fall back to Spring's ContextLoaderServlet for
+		- J2EE servers that do not follow the Servlet 2.4 initialization order.
+		-
+		- Use WebApplicationContextUtils.getWebApplicationContext(servletContext)
+		- to access it anywhere in the web application, outside of the framework.
+		-
+		- The root context is the parent of all servlet-specific contexts.
+		- This means that its beans are automatically available in these child contexts,
+		- both for getBean(name) calls and (external) bean references.
+	-->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>it.eldasoft.gene.commons.web.ListenerSessioniUtente</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/xml/struts/struts-config-gene-common.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/geneAdmin</param-name>
+			<param-value>
+				/WEB-INF/xml/struts/struts-config-gene-admin.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/geneGenric</param-name>
+			<param-value>
+				/WEB-INF/xml/struts/struts-config-gene-genric.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/geneGenmod</param-name>
+			<param-value>
+				/WEB-INF/xml/struts/struts-config-gene-genmod.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/w3</param-name>
+			<param-value>
+				/WEB-INF/xml/struts/struts-config-w3.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>chainConfig</param-name>
+			<param-value>org/apache/struts/tiles/chain-config.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<display-name>Apache-Axis Servlet</display-name>
+		<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>
+		org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Axis Admin Servlet</display-name>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>
+		org.apache.axis.transport.http.AdminServlet</servlet-class>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>it.eldasoft.sil.w3.rest</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/servlet/AdminServlet</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+    	<servlet-name>Jersey REST Service</servlet-name>
+    	<url-pattern>/rest/*</url-pattern>
+  	</servlet-mapping>
+  	<!-- OWASP CSRFGuard listener -->
+	<listener>
+		<listener-class>org.owasp.csrfguard.CsrfGuardServletContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.owasp.csrfguard.CsrfGuardHttpSessionListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>Owasp.CsrfGuard.Config</param-name>
+		<param-value>WEB-INF/classes/Owasp.CsrfGuard.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>Owasp.CsrfGuard.Config.Print</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- OWASP CSRFGuard filter used to validate CSRF token-->
+	<filter>
+		<filter-name>CSRFGuard</filter-name>
+		<filter-class>org.owasp.csrfguard.CsrfGuardFilter</filter-class>
+	</filter>
+
+	<!-- OWASP CSRFGuard filter mapping used to validate CSRF token-->
+	<filter-mapping>
+		<filter-name>CSRFGuard</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- OWASP CSRFGuard servlet used to inject CSRF token on page-->
+	<servlet>
+		<servlet-name>CsrfServlet</servlet-name>
+		<servlet-class>org.owasp.csrfguard.servlet.JavaScriptServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CsrfServlet</servlet-name>
+		<url-pattern>/csrfguard</url-pattern>
+	</servlet-mapping>	
+	
+	<!-- XSS MITIGATION -->
+	<filter>
+		<filter-name>XSSRequestFilter</filter-name>
+		<filter-class>
+			it.eldasoft.gene.commons.web.XSSRequestFilter
+		</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>XSSRequestFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!--  session-config>
+		<session-timeout>30</session-timeout>
+	</session-config -->
+
+</web-app>

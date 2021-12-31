@@ -1,0 +1,34 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EldasoftSimapWSService WSDL service -->
+
+  <service name="EldasoftSimapWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.simap.eldasoft.it/"/>
+      <parameter name="wsdlServiceElement" value="EldasoftSimapWSService"/>
+      <parameter name="schemaUnqualified" value="http://ws.simap.eldasoft.it/"/>
+      <parameter name="wsdlServicePort" value="EldasoftSimapWS"/>
+      <parameter name="className" value="it.eldasoft.simap.ws.EldasoftSimapWSBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="EldasoftSimapWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://ws.simap.eldasoft.it/"
+        qname="ns:esitoSimapWS"
+        type="java:it.eldasoft.simap.ws.EsitoSimapWS"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TipoAmministrazione" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.2396694214876032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1"/>
+	<parameter name="codamm" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="formulario" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     W3AMMI.CODAMM AS W3AMMI_CODAMM,
+     W3AMMI.TYPE_AUTHORITY AS W3AMMI_TYPE_AUTHORITY,
+     W3AMMI.TYPE_AUTHORITY_OTHER AS W3AMMI_TYPE_AUTHORITY_OTHER,
+     W3AMMI.GENERAL_PUBLIC_SERVICES AS W3AMMI_GENERAL_PUBLIC_SERVICES,
+     W3AMMI.CODEIN AS W3AMMI_CODEIN,
+     W3AMMI.RECREATION_CULTURE AS W3AMMI_RECREATION_CULTURE,
+     W3AMMI.SOCIAL_PROTECTION AS W3AMMI_SOCIAL_PROTECTION,
+     W3AMMI.EDUCATION AS W3AMMI_EDUCATION,
+     W3AMMI.HEALTH AS W3AMMI_HEALTH,
+     W3AMMI.ENVIRONMENT AS W3AMMI_ENVIRONMENT,
+     W3AMMI.PUBLIC_ORDER_AND_SAFETY AS W3AMMI_PUBLIC_ORDER_AND_SAFETY,
+     W3AMMI.HOUSING_AND_COMMUNITY AS W3AMMI_HOUSING_AND_COMMUNITY,
+     W3AMMI.DEFENCE AS W3AMMI_DEFENCE,
+     W3AMMI.ECONOMIC_AND_FINANCIAL_AFFAIRS AS W3AMMI_ECONOMIC_AND_FINANCIAL_,
+     W3AMMI.TYPE_ACTIVITY_OTHER AS W3AMMI_TYPE_ACTIVITY_OTHER,
+     W3AMMI.RAILWAY_SERVICES AS W3AMMI_RAILWAY_SERVICES,
+     W3AMMI.POSTAL_SERVICES AS W3AMMI_POSTAL_SERVICES,
+     W3AMMI.EXPLORATION_EXTRACTION AS W3AMMI_EXPLORATION_EXTRACTION,
+     W3AMMI.PORT_RELATED_ACTIVITIES AS W3AMMI_PORT_RELATED_ACTIVITIES,
+     W3AMMI.WATER AS W3AMMI_WATER,
+     W3AMMI.ELECTRICITY AS W3AMMI_ELECTRICITY,
+     W3AMMI.AIRPORT_RELATED_ACTIVITIES AS W3AMMI_AIRPORT_RELATED_ACTIVIT,
+     W3AMMI.URBAN_RAILWAY_TRAMWAY AS W3AMMI_URBAN_RAILWAY_TRAMWAY,
+     W3AMMI.EXPLORATION_GAS_OIL AS W3AMMI_EXPLORATION_GAS_OIL,
+     W3AMMI.PRODUCTION_TRANSPORT_GAS AS W3AMMI_PRODUCTION_TRANSPORT_GA,
+     W3AMMI.PURCHASING_BEHALF AS W3AMMI_PURCHASING_BEHALF,
+     W3AMMI.ACTIVITY_OF_CONTRACTING_EO AS W3AMMI_ACTIVITY_EO
+FROM
+     W3AMMI
+WHERE
+     w3ammi.codamm = $P{codamm}]]>
+	</queryString>
+	<field name="W3AMMI_CODAMM" class="java.lang.String"/>
+	<field name="W3AMMI_TYPE_AUTHORITY" class="java.lang.String"/>
+	<field name="W3AMMI_TYPE_AUTHORITY_OTHER" class="java.lang.String"/>
+	<field name="W3AMMI_GENERAL_PUBLIC_SERVICES" class="java.lang.String"/>
+	<field name="W3AMMI_CODEIN" class="java.lang.String"/>
+	<field name="W3AMMI_RECREATION_CULTURE" class="java.lang.String"/>
+	<field name="W3AMMI_SOCIAL_PROTECTION" class="java.lang.String"/>
+	<field name="W3AMMI_EDUCATION" class="java.lang.String"/>
+	<field name="W3AMMI_HEALTH" class="java.lang.String"/>
+	<field name="W3AMMI_ENVIRONMENT" class="java.lang.String"/>
+	<field name="W3AMMI_PUBLIC_ORDER_AND_SAFETY" class="java.lang.String"/>
+	<field name="W3AMMI_HOUSING_AND_COMMUNITY" class="java.lang.String"/>
+	<field name="W3AMMI_DEFENCE" class="java.lang.String"/>
+	<field name="W3AMMI_ECONOMIC_AND_FINANCIAL_" class="java.lang.String"/>
+	<field name="W3AMMI_TYPE_ACTIVITY_OTHER" class="java.lang.String"/>
+	<field name="W3AMMI_RAILWAY_SERVICES" class="java.lang.String"/>
+	<field name="W3AMMI_POSTAL_SERVICES" class="java.lang.String"/>
+	<field name="W3AMMI_EXPLORATION_EXTRACTION" class="java.lang.String"/>
+	<field name="W3AMMI_PORT_RELATED_ACTIVITIES" class="java.lang.String"/>
+	<field name="W3AMMI_WATER" class="java.lang.String"/>
+	<field name="W3AMMI_ELECTRICITY" class="java.lang.String"/>
+	<field name="W3AMMI_AIRPORT_RELATED_ACTIVIT" class="java.lang.String"/>
+	<field name="W3AMMI_URBAN_RAILWAY_TRAMWAY" class="java.lang.String"/>
+	<field name="W3AMMI_EXPLORATION_GAS_OIL" class="java.lang.String"/>
+	<field name="W3AMMI_PRODUCTION_TRANSPORT_GA" class="java.lang.String"/>
+	<field name="W3AMMI_PURCHASING_BEHALF" class="java.lang.String"/>
+	<field name="W3AMMI_ACTIVITY_EO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="389" splitType="Immediate">
+			<staticText>
+				<reportElement x="17" y="137" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Difesa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="152" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ordine pubblico e sicurezza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="167" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ambiente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="182" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Affari economici e finanziari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="197" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Salute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="212" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Abitazioni e assetto territoriale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="227" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Protezione sociale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="242" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi ricreativi, cultura e religione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="257" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Istruzione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-2" y="272" width="48" height="30" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Altro:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="46" y="272" width="197" height="30" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3AMMI_TYPE_ACTIVITY_OTHER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.2) Tipo di amministrazione aggiudicatrice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="337" width="432" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'amministrazione aggiudicatrice acquista per conto di altre amministrazioni aggiudicatrici:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="33" y="47" width="522" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3AMMI_TYPE_AUTHORITY_OTHER}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="32" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z51"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_TYPE_AUTHORITY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="20" width="555" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS8")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement>
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(nel caso di un avviso pubblicato da un'amministrazione aggiudicatrice)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="122" width="226" height="15" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi generali delle pubbliche amministrazioni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="77" width="555" height="20"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.3) Principali settori di attività]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="97" width="241" height="25" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS8")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement>
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(nel caso di un avviso pubblicato da un'amministrazione aggiudicatrice)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="317" width="555" height="20"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.4) Concessione di un appalto a nome di altre amministrazioni aggiudicatrici]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="47" width="33" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[($F{W3AMMI_TYPE_AUTHORITY_OTHER} != null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Altro:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="62" width="554" height="15"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="302" width="554" height="15"/>
+			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="433" y="337" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_PURCHASING_BEHALF}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="122" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_GENERAL_PUBLIC_SERVICES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="137" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_DEFENCE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="152" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_PUBLIC_ORDER_AND_SAFETY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="167" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_ENVIRONMENT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="182" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_ECONOMIC_AND_FINANCIAL_}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="197" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_HEALTH}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="212" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_HOUSING_AND_COMMUNITY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="227" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_SOCIAL_PROTECTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="242" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_RECREATION_CULTURE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-2" y="257" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_EDUCATION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="352" width="432" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(in caso affermativo, ulteriori informazioni su queste amministrazioni aggiudicatrici possono essere riportate nell'allegato A)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="137" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Elettricità]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="167" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Esplorazione ed estrazione di carbone e altri combustibili solidi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="122" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Produzione, trasporto e distribuzione di gas e calore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="152" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Esplorazione ed estrazione di gas e petrolio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="212" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi ferroviari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="257" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Attività connesse agli aeroporti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="182" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Acqua]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="242" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Attività connesse ai porti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="197" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi postali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="227" width="289" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Servizi di ferrovia urbana, tram, filobus o bus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="273" width="41" height="29" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Altro:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="287" y="272" width="266" height="30"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3AMMI_ACTIVITY_EO}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="122" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_PRODUCTION_TRANSPORT_GA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="137" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_ELECTRICITY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="152" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_EXPLORATION_GAS_OIL}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="167" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_EXPLORATION_EXTRACTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="182" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_WATER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="197" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_POSTAL_SERVICES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="212" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_RAILWAY_SERVICES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="227" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_URBAN_RAILWAY_TRAMWAY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="242" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_PORT_RELATED_ACTIVITIES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="246" y="257" width="18" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3AMMI_AIRPORT_RELATED_ACTIVIT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="244" y="97" width="309" height="25" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS8")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement>
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(nel caso di un avviso pubblicato da un'ente aggiudicatore)]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

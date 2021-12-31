@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="W3SIMAPEMAIL">
+
+	<resultMap id="resultW3SIMAPEMAIL" class="it.eldasoft.gene.db.domain.BlobFile">
+		<result property="stream" column="ATTACHMENT" columnIndex="1" jdbcType="BINARY"/>
+	</resultMap>
+
+	<select id="getAttachment" parameterClass="java.util.HashMap" resultMap="resultW3SIMAPEMAIL">
+		SELECT ATTACHMENT FROM W3SIMAPEMAIL WHERE ID = #id# AND NUM = #num#
+	</select>
+
+</sqlMap>

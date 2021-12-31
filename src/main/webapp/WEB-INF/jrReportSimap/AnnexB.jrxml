@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AnnexB" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.2396694214876032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="formulario" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     W3ANNEXB.ID AS W3ANNEXB_ID,
+     W3ANNEXB.NUM AS W3ANNEXB_NUM,
+     W3ANNEXB.LOTNUM AS W3ANNEXB_LOTNUM,
+     W3ANNEXB.TITLE AS W3ANNEXB_TITLE,
+     W3ANNEXB.DESCRIPTION AS W3ANNEXB_DESCRIPTION,
+     W3ANNEXB.CPV AS W3ANNEXB_CPV,
+     W3ANNEXB.CPVSUPP1 AS W3ANNEXB_CPVSUPP1,
+     W3ANNEXB.CPVSUPP2 AS W3ANNEXB_CPVSUPP2,
+     W3ANNEXB.TOTAL AS W3ANNEXB_TOTAL,
+     W3ANNEXB.COST AS W3ANNEXB_COST,
+     W3ANNEXB.LOW AS W3ANNEXB_LOW,
+     W3ANNEXB.HIGH AS W3ANNEXB_HIGH,
+     W3ANNEXB.PROCEDURE_DATE_STARTING AS W3ANNEXB_PROCEDURE_DATE_STARTI,
+     W3ANNEXB.WORK_MONTH AS W3ANNEXB_WORK_MONTH,
+     W3ANNEXB.WORK_DAYS AS W3ANNEXB_WORK_DAYS,
+     W3ANNEXB.WORK_START_DATE AS W3ANNEXB_WORK_START_DATE,
+     W3ANNEXB.WORK_END_DATE AS W3ANNEXB_WORK_END_DATE,
+     W3ANNEXB.ADDITIONAL_INFORMATION AS W3ANNEXB_ADDITIONAL_INFORMATIO,
+     W3ANNEXB.CIG AS W3ANNEXB_CIG
+FROM
+     W3ANNEXB
+WHERE W3ANNEXB.ID = $P{id}]]>
+	</queryString>
+	<field name="W3ANNEXB_ID" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_NUM" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_LOTNUM" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_TITLE" class="java.lang.String"/>
+	<field name="W3ANNEXB_DESCRIPTION" class="java.lang.String"/>
+	<field name="W3ANNEXB_CPV" class="java.lang.String"/>
+	<field name="W3ANNEXB_CPVSUPP1" class="java.lang.String"/>
+	<field name="W3ANNEXB_CPVSUPP2" class="java.lang.String"/>
+	<field name="W3ANNEXB_TOTAL" class="java.lang.String"/>
+	<field name="W3ANNEXB_COST" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_LOW" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_HIGH" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_PROCEDURE_DATE_STARTI" class="java.sql.Timestamp"/>
+	<field name="W3ANNEXB_WORK_MONTH" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_WORK_DAYS" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXB_WORK_START_DATE" class="java.sql.Timestamp"/>
+	<field name="W3ANNEXB_WORK_END_DATE" class="java.sql.Timestamp"/>
+	<field name="W3ANNEXB_ADDITIONAL_INFORMATIO" class="java.lang.String"/>
+	<field name="W3ANNEXB_CIG" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="474" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="74" width="50" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lotto n.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="126" y="74" width="85" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Denominazione:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="211" y="74" width="344" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_TITLE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="109" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1) Breve descrizione]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="129" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="24" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informazioni sui lotti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="4" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allegato B]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="44" width="595" height="10" forecolor="#FFFFFF"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="164" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2) Vocabolario comune per gli appalti (CPV)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="225" y="184" width="168" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario principale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="3" y="199" width="222" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Oggetto principale:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="395" y="184" width="160" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario supplementare]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="225" y="199" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_CPV}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="395" y="199" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_CPVSUPP1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="475" y="199" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_CPVSUPP2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="249" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[3) Quantitativo o entità]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="354" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS2")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[4) Indicazione di una durata diversa dell'appalto o di una data diversa di inizio/conclusione]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="269" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="133" y="284" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3ANNEXB_COST}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="195" y="299" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3ANNEXB_LOW}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="307" y="299" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3ANNEXB_HIGH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="284" width="133" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_COST}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Valore stimato, IVA esclusa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="299" width="195" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_LOW}!=null || $F{W3ANNEXB_HIGH}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Valore stimato, IVA esclusa, compresa tra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="295" y="299" width="12" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_LOW}!=null || $F{W3ANNEXB_HIGH}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ e ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="389" width="79" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_WORK_MONTH}!= null || $F{W3ANNEXB_WORK_DAYS} != null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Periodo in mesi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="116" y="389" width="43" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_WORK_MONTH}!= null || $F{W3ANNEXB_WORK_DAYS} != null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[o giorni:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="211" y="389" width="164" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_WORK_MONTH}!= null || $F{W3ANNEXB_WORK_DAYS} != null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[(dall'aggiudicazione dell'appalto)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="404" width="79" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_WORK_START_DATE}!= null || $F{W3ANNEXB_WORK_END_DATE}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data di inizio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="150" y="404" width="93" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3ANNEXB_WORK_START_DATE}!= null || $F{W3ANNEXB_WORK_END_DATE}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data di conclusione:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="79" y="389" width="37" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3ANNEXB_WORK_MONTH}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="159" y="389" width="36" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3ANNEXB_WORK_DAYS}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="79" y="404" width="70" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3ANNEXB_WORK_START_DATE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="243" y="404" width="70" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3ANNEXB_WORK_END_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="439" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[5) Ulteriori informazioni sui lotti]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="459" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXB_ADDITIONAL_INFORMATIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="50" y="74" width="50" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3ANNEXB_NUM}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="214" width="555" height="15"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXB_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="num">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXB_NUM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ent">
+					<subreportParameterExpression><![CDATA["W3ANNEXB"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CpvAdditional.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="334" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS1")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[4) Indicazione di una data diversa per l'avvio delle procedure di aggiudicazione e/o di una durata diversa dell'appalto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="374" width="272" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS1") && $F{W3ANNEXB_PROCEDURE_DATE_STARTI}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data prevista per l'avvio delle procedure di aggiudicazione:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="273" y="374" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{formulario}.equals("FS1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3ANNEXB_PROCEDURE_DATE_STARTI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="54" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Denominazione conferita all'appalto dall'amministrazione aggiudicatrice:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="89" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="144" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="229" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="314" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="419" width="555" height="20"/>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

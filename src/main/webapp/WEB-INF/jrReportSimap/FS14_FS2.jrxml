@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FS14_FS2" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.1269722013523664"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Programmi\\Jaspersoft\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3SIMAP.ID AS W3SIMAP_ID,
+     W3SIMAP.NOTICE_NUMBER_OJ AS W3SIMAP_NOTICE_NUMBER_OJ,
+     W3SIMAP.DATE_OJ AS W3SIMAP_DATE_OJ,
+     W3FS2.ID AS W3FS2_ID,
+     W3FS2.NOTICE_DATE AS W3FS2_NOTICE_DATE,
+     W3FS2.TITLE_CONTRACT AS W3FS2_TITLE_CONTRACT,
+     W3FS2.SHORT_DESCRIPTION AS W3FS2_SHORT_DESCRIPTION,
+     W3FS2.CPV AS W3FS2_CPV,
+     W3FS2.CPVSUPP1 AS W3FS2_CPVSUPP1,
+     W3FS2.CPVSUPP2 AS W3FS2_CPVSUPP2,
+     W3FS2.TYPE_PROCEDURE AS W3FS2_TYPE_PROCEDURE,
+     W3FS2.FILE_REFERENCE_NUMBER AS W3FS2_FILE_REFERENCE_NUMBER
+FROM
+     W3SIMAP,
+     W3FS2
+WHERE
+     W3SIMAP.ID = W3FS2.ID
+AND  W3FS2.ID = $P{id}]]>
+	</queryString>
+	<field name="W3SIMAP_ID" class="java.math.BigDecimal"/>
+	<field name="W3SIMAP_NOTICE_NUMBER_OJ" class="java.lang.String"/>
+	<field name="W3SIMAP_DATE_OJ" class="java.sql.Timestamp"/>
+	<field name="W3FS2_ID" class="java.math.BigDecimal"/>
+	<field name="W3FS2_NOTICE_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_TITLE_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS2_SHORT_DESCRIPTION" class="java.lang.String"/>
+	<field name="W3FS2_CPV" class="java.lang.String"/>
+	<field name="W3FS2_CPVSUPP1" class="java.lang.String"/>
+	<field name="W3FS2_CPVSUPP2" class="java.lang.String"/>
+	<field name="W3FS2_TYPE_PROCEDURE" class="java.lang.String"/>
+	<field name="W3FS2_FILE_REFERENCE_NUMBER" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="514">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE II: OGGETTO DELL'APPALTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.1) Denominazione conferita all'appalto dall'amministrazione aggiudicatrice]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_TITLE_CONTRACT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="95" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.2) Breve descrizione dell'appalto o degli acquisti]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="115" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SHORT_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="150" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.3) CPV (Vocabolario comune per gli appalti)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="225" y="170" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario principale]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="395" y="185" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_CPVSUPP1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="475" y="185" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_CPVSUPP2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="395" y="170" width="160" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario supplementare]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="225" y="185" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_CPV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="3" y="185" width="222" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Oggetto principale:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="200" width="554" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ent">
+					<subreportParameterExpression><![CDATA["W3FS2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CpvAdditionalMain.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1) Descrizione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="236" width="555" height="20" isRemoveLineWhenBlank="true" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE IV: PROCEDURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="436" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2.3) Avviso a cui si riferisce la presente pubblicazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="456" width="154" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero dell'avviso nella GU:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="155" y="456" width="100" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3SIMAP_NOTICE_NUMBER_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="255" y="456" width="25" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[del]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="280" y="456" width="70" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3SIMAP_DATE_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="491" width="242" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2.4) Data di spedizione dell'avviso originale]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="244" y="491" width="100" height="20"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_NOTICE_DATE}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="386" width="554" height="30"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "FS14_W3SIMAPEMAIL.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="216" width="555" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="256" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.1) Tipo di procedura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="276" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.1.1) Tipo di procedura]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="296" width="555" height="15"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z46"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="331" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2) Informazioni di carattere amministrativo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="351" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2.1) Numero di riferimento attribuito al dossier dall'amministrazione aggiudicatrice]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="371" width="554" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_FILE_REFERENCE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="75" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="130" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="311" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="416" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="2" y="471" width="555" height="20"/>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

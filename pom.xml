@@ -1,0 +1,286 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>it.maggioli.eldasoft</groupId>
+		<artifactId>webapp-base</artifactId>
+		<version>1.2.3</version>
+	</parent>
+	<groupId>it.maggioli.eldasoft.sil</groupId>
+	<artifactId>${codapp}-webapp</artifactId>
+	<version>4.7.0</version>
+	<packaging>war</packaging>
+
+	
+	<name>FEU</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>4.5.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.lowagie</groupId>
+					<artifactId>itext</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.poi</groupId>
+					<artifactId>poi-ooxml</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports-fonts</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.50</version>
+		</dependency>
+		<dependency>
+			<groupId>it.maggioli.eldasoft.sil</groupId>
+			<artifactId>wssimap-datatypes</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.ws</groupId> -->
+<!-- 			<artifactId>spring-ws</artifactId> -->
+<!-- 			<version>1.5.2</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>jaxrpc-api</artifactId>
+			<version>1.1</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.apache.ws.security</groupId>
+			<artifactId>wss4j</artifactId>
+			<version>1.5.6</version>
+			<exclusions>
+				<exclusion>
+					<groupId>bouncycastle</groupId>
+					<artifactId>bcprov-jdk14</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>bouncycastle</groupId>
+					<artifactId>bcprov-jdk15</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.4.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.6.7</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>esentool-rest-client</groupId>
+		    <artifactId>esentool-rest-client</artifactId>
+		    <version>2.0.0</version>
+		    <scope>system</scope>
+		    <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/esentool-rest-client-2.0.0.jar</systemPath>
+		</dependency>
+		<dependency>
+		    <groupId>esentool-rest-client-javadoc</groupId>
+		    <artifactId>esentool-rest-client-javadoc</artifactId>
+		    <version>2.0.0</version>
+		    <scope>system</scope>
+		    <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/esentool-rest-client-2.0.0-javadoc.jar</systemPath>
+		</dependency>
+		<dependency>
+		    <groupId>it.maggioli.eldasoft.sil</groupId>
+		    <artifactId>simap-datatypes</artifactId>
+		    <version>2.0.9.S04</version>
+		    <scope>system</scope>
+		    <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/simap-datatypes-2.0.9.S04.jar</systemPath>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-servlet</artifactId>
+		    <version>2.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.owlike</groupId>
+		    <artifactId>genson</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.3.2</version>
+			<type>pom</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>stax2-api</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.glassfish.corba</groupId>
+			<artifactId>glassfish-corba-orb</artifactId>
+            <version>4.0.1</version>
+        </dependency> 
+
+	</dependencies>
+
+	<properties>
+		<geneweb.version>2.20.0-regmarche</geneweb.version>
+		<codapp>w3</codapp>
+	</properties>
+
+	<build>
+		<finalName>FEU</finalName>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-enforcer-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.code.maven-config-processor-plugin</groupId>
+				<artifactId>maven-config-processor-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<configuration>
+							<outputDirectory>${project.build.directory}/war/work/resources</outputDirectory>
+							<resources>          
+								<resource>
+									<directory>${project.build.directory}/dependencies-unpacked/geneweb-webapp/WEB-INF</directory>
+									<excludes>
+										<exclude>xml/**</exclude>
+										<exclude>pages/**</exclude> <!-- se dovessero esserci nei pom figli...-->
+										<exclude>classes/log4j.properties</exclude> <!-- MODIFICA IN QUESTO PROGETTO: USO UN LOG4J AD HOC -->
+									</excludes>
+									<filtering>true</filtering> <!-- si mantiene per webconsole -->
+								</resource>
+							</resources>              
+						</configuration>            
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+        <profile>
+            <id>env-dev</id>
+            <activation>
+				<activeByDefault>true</activeByDefault>
+                <property>
+					<!-- Activate: mvn -Denv=dev <phase> -->
+                    <name>env</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+        <profile>
+            <id>env-prod</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>prod</value>
+                </property>
+            </activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.pyx4me</groupId>
+						<artifactId>proguard-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AnnexD" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.1269722013523664"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="135"/>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Programmi\\Jaspersoft\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3ANNEXD.ID AS W3ANNEXD_ID,
+     W3ANNEXD.NO_OPEN_RESTRICTED AS W3ANNEXD_NO_OPEN_RESTRICTED,
+     W3ANNEXD.MANUFACTURED AS W3ANNEXD_MANUFACTURED,
+     W3ANNEXD.PARTICULAR_TENDERED AS W3ANNEXD_PARTICULAR_TENDERED,
+     W3ANNEXD.EXTREME_URGENCY AS W3ANNEXD_EXTREME_URGENCY,
+     W3ANNEXD.ADDITIONAL_WORKS AS W3ANNEXD_ADDITIONAL_WORKS,
+     W3ANNEXD.WORKS_REPETITION AS W3ANNEXD_WORKS_REPETITION,
+     W3ANNEXD.SERVICE_CONTRACT AS W3ANNEXD_SERVICE_CONTRACT,
+     W3ANNEXD.SUPPLIES_QUOTED AS W3ANNEXD_SUPPLIES_QUOTED,
+     W3ANNEXD.PURCHASE_SUPPLIES AS W3ANNEXD_PURCHASE_SUPPLIES,
+     W3ANNEXD.ONLY_IRREGULAR AS W3ANNEXD_ONLY_IRREGULAR,
+     W3ANNEXD.OTHER_JUSTIFICATION AS W3ANNEXD_OTHER_JUSTIFICATION,
+     W3ANNEXD.REASON_CONTRACT_LAWFUL AS W3ANNEXD_REASON_CONTRACT_LAWFU
+FROM
+     W3ANNEXD
+WHERE
+     W3ANNEXD.ID = $P{id}]]>
+	</queryString>
+	<field name="W3ANNEXD_ID" class="java.math.BigDecimal"/>
+	<field name="W3ANNEXD_NO_OPEN_RESTRICTED" class="java.lang.String"/>
+	<field name="W3ANNEXD_MANUFACTURED" class="java.lang.String"/>
+	<field name="W3ANNEXD_PARTICULAR_TENDERED" class="java.lang.String"/>
+	<field name="W3ANNEXD_EXTREME_URGENCY" class="java.lang.String"/>
+	<field name="W3ANNEXD_ADDITIONAL_WORKS" class="java.lang.String"/>
+	<field name="W3ANNEXD_WORKS_REPETITION" class="java.lang.String"/>
+	<field name="W3ANNEXD_SERVICE_CONTRACT" class="java.lang.String"/>
+	<field name="W3ANNEXD_SUPPLIES_QUOTED" class="java.lang.String"/>
+	<field name="W3ANNEXD_PURCHASE_SUPPLIES" class="java.lang.String"/>
+	<field name="W3ANNEXD_ONLY_IRREGULAR" class="java.lang.String"/>
+	<field name="W3ANNEXD_OTHER_JUSTIFICATION" class="java.lang.String"/>
+	<field name="W3ANNEXD_REASON_CONTRACT_LAWFU" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="660" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="2" width="538" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allegato D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="22" width="538" height="45" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motivazione della decisione di aggiudicare un appalto senza la previa pubblicazione di un bando di gara nella Gazzetta Ufficiale dell'Unione Europea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="6" y="97" width="282" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Top">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Non sono pervenute offerte o offerte adeguate in risposta a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="142" width="512" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[I prodotti in questione sono fabbricati unicamente a scopo di ricerca, sperimentazione, studio o sviluppo alle condizioni fissate dalla direttiva (unicamente per le forniture).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="6" y="182" width="282" height="45"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Top">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[I lavori/le merci/i servizi possono essere forniti unicamente da un determinato offerente per ragioni che sono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="237" width="512" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estrema urgenza determinata da eventi che non potevano essere previsti dall'amministrazione aggiudicatrice e conformemente alle rigorose condizioni fissate dalla direttiva.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="277" width="512" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lavori/forniture/servizi complementari sono ordinati conformemente alle rigorose condizioni fissate dalla direttiva.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="302" width="512" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nuovi lavori/servizi che costituiscono una ripetizione di lavori/servizi precedenti, ordinati conformemente alle rigorose condizioni fissate dalla direttiva.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="342" width="512" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Appalto di servizi aggiudicato al vincitore o a uno dei vincitori di un concorso di progettazione.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="367" width="512" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Per forniture quotate e acquistate in una borsa di materie prime.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="6" y="392" width="180" height="45"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Top">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Per l'acquisto di forniture a condizioni particolarmente vantaggiose:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="447" width="512" height="46"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tutte le offerte presentate in risposta ad una procedura aperta, una procedura ristretta o ad un dialogo competitivo erano irregolari o inaccettabili. Solo le offerte conformi ai criteri di selezione qualitati sono state incluse nelle negoziazioni.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="583" width="538" height="60">
+					<printWhenExpression><![CDATA[$F{W3ANNEXD_REASON_CONTRACT_LAWFU}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Per beneficiare della riduzione dei termini di cui sopra, oltre a contrassegnare la o le caselle pertinenti, illustrare in modo chiaro ed organico le ragioni per cui è considerata legale l'aggiudicazione dell'appalto senza la previa pubblicazione di un bando di gara nella Gazzetta Ufficiale dell'Unione Europea, elencando in ogni caso i fatti pertinenti e, se del caso, le conclusioni di diritto, conformemente agli articoli della direttiva 2004/18/CE.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="643" width="538" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3ANNEXD_REASON_CONTRACT_LAWFU}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="513" width="538" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2) Altre motivazioni per l'aggiudicazione dell'appalto senza la previa pubblicazione di un bando di gara nella Gazzetta Ufficiale dell'Unione Europea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="67" width="538" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1) Motivazione della scelta della procedura negoziata senza la previa pubblicazione di un bando di gara nella Gazzetta ufficiale dell'Unione Europea, conformemente all'articolo 31 della direttiva 2004/18/CE]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="493" width="538" height="20"/>
+			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="6" y="150" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_MANUFACTURED}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="7" y="245" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_EXTREME_URGENCY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="6" y="277" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_ADDITIONAL_WORKS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="6" y="310" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_WORKS_REPETITION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="6" y="342" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_SERVICE_CONTRACT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="6" y="367" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_SUPPLIES_QUOTED}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="6" y="463" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_ONLY_IRREGULAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="288" y="97" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_NO_OPEN_RESTRICTED}.equals("1") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="305" y="97" width="133" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[una procedura aperta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="112" width="133" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[una procedura ristretta]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="288" y="112" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_NO_OPEN_RESTRICTED}.equals("2") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="288" y="182" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_PARTICULAR_TENDERED}.equals("1") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="288" y="197" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_PARTICULAR_TENDERED}.equals("2") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="288" y="212" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_PARTICULAR_TENDERED}.equals("3") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="304" y="197" width="183" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[di carattere artistico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="182" width="183" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[di carattere tecnico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="212" width="183" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[connesso alla tutela di diritti esclusivi]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="186" y="407" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_PURCHASE_SUPPLIES}.equals("1") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="202" y="407" width="336" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[dai curatori o liquidatori di un fallimento, di un accordo con i creditori o di procedure analoghe]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="186" y="392" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_PURCHASE_SUPPLIES}.equals("2") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="202" y="392" width="336" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[da un fornitore che è in fase di liquidazione definitiva della propria attività]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="543" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_OTHER_JUSTIFICATION}.equals("1") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="16" y="543" width="522" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'appalto ha per oggetto i servizi di cui all'allegato II B della direttiva]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="558" width="15" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3ANNEXD_OTHER_JUSTIFICATION}.equals("2") ? "1" : "2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="17" y="558" width="522" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'appalto non rientra nel campo di applicazione della pertinente direttiva]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

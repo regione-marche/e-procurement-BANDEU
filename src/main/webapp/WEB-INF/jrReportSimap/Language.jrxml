@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Language" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="21"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="id" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Java\\Sviluppo\\EclipseWS\\Eldasoft64\\Comunicazioni\\src\\main\\webapp\\WEB-INF\\jrReportSimap\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3LANGUAGE.ID AS W3LANGUAGE_ID,
+     W3LANGUAGE.NUM AS W3LANGUAGE_NUM,
+     W3LANGUAGE.LANGUAGE_EC AS W3LANGUAGE_LANGUAGE_EC
+FROM
+     W3LANGUAGE
+WHERE
+     W3LANGUAGE.ID = $P{id}
+ORDER BY
+     W3LANGUAGE.NUM]]>
+	</queryString>
+	<field name="W3LANGUAGE_ID" class="java.math.BigDecimal"/>
+	<field name="W3LANGUAGE_NUM" class="java.math.BigDecimal"/>
+	<field name="W3LANGUAGE_LANGUAGE_EC" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="181" height="15"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3LANGUAGE_LANGUAGE_EC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z69"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

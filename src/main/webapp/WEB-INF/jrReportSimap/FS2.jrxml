@@ -1,0 +1,2974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FS2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="3018"/>
+	<style name="checkbox"/>
+	<subDataset name="dataset1"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Java\\Sviluppo\\EclipseWS\\Eldasoft64\\Comunicazioni\\src\\main\\webapp\\WEB-INF\\jrReportSimap\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     W3SIMAP.ID AS W3SIMAP_ID,
+     W3SIMAP.FORM AS W3SIMAP_FORM,
+     W3SIMAP.CODAMM AS W3SIMAP_CODAMM,
+     W3SIMAP.CTYPE AS W3SIMAP_CTYPE,
+     W3SIMAP.NOTICE_NUMBER_OJ AS W3SIMAP_NOTICE_NUMBER_OJ,
+     W3SIMAP.DATE_OJ AS W3SIMAP_DATE_OJ,
+     W3SIMAP.SYSCON AS W3SIMAP_SYSCON,
+     W3FS2.ID AS W3FS2_ID,
+     W3FS2.FURTHER_INFO AS W3FS2_FURTHER_INFO,
+     W3FS2.FURTHER_INFO_CODEIN AS W3FS2_FURTHER_INFO_CODEIN,
+     W3FS2.ADDITIONAL_INFO AS W3FS2_ADDITIONAL_INFO,
+     W3FS2.ADDITIONAL_INFO_CODEIN AS W3FS2_ADDITIONAL_INFO_CODEIN,
+     W3FS2.REQUEST_SENT AS W3FS2_REQUEST_SENT,
+     W3FS2.REQUEST_SENT_CODEIN AS W3FS2_REQUEST_SENT_CODEIN,
+     W3FS2.TITLE_CONTRACT AS W3FS2_TITLE_CONTRACT,
+     W3FS2.TYPE_CONTRACT AS W3FS2_TYPE_CONTRACT,
+     W3FS2.TYPE_WORK_CONTRACT AS W3FS2_TYPE_WORK_CONTRACT,
+     W3FS2.TYPE_SUPPLIES AS W3FS2_TYPE_SUPPLIES,
+     W3FS2.TYPE_CATEGORY AS W3FS2_TYPE_CATEGORY,
+     W3FS2.SITE_LABEL AS W3FS2_SITE_LABEL,
+     W3FS2.SITE_NUTS AS W3FS2_SITE_NUTS,
+     W3FS2.NOTICE_INVOLVES AS W3FS2_NOTICE_INVOLVES,
+     W3FS2.FRAME_SINGLE_OPERATOR AS W3FS2_FRAME_SINGLE_OPERATOR,
+     W3FS2.FRAME_OPERATORS_NUMBER AS W3FS2_FRAME_OPERATORS_NUMBER,
+     W3FS2.FRAME_OPERATORS_MAX AS W3FS2_FRAME_OPERATORS_MAX,
+     W3FS2.FRAME_DURATION_YEAR AS W3FS2_FRAME_DURATION_YEAR,
+     W3FS2.FRAME_DURATION_MONTH AS W3FS2_FRAME_DURATION_MONTH,
+     W3FS2.FRAME_JUSTIFICATION AS W3FS2_FRAME_JUSTIFICATION,
+     W3FS2.FRAME_TOTAL_COST AS W3FS2_FRAME_TOTAL_COST,
+     W3FS2.FRAME_TOTAL_LOW AS W3FS2_FRAME_TOTAL_LOW,
+     W3FS2.FRAME_TOTAL_HIGH AS W3FS2_FRAME_TOTAL_HIGH,
+     W3FS2.FRAME_FREQUENCY AS W3FS2_FRAME_FREQUENCY,
+     W3FS2.SHORT_DESCRIPTION AS W3FS2_SHORT_DESCRIPTION,
+     W3FS2.CPV AS W3FS2_CPV,
+     W3FS2.CPVSUPP1 AS W3FS2_CPVSUPP1,
+     W3FS2.CPVSUPP2 AS W3FS2_CPVSUPP2,
+     W3FS2.CONTRACT_COVERED_GPA AS W3FS2_CONTRACT_COVERED_GPA,
+     W3FS2.DIV_INTO_LOTS AS W3FS2_DIV_INTO_LOTS,
+     W3FS2.DIV_LOTS_VALUE AS W3FS2_DIV_LOTS_VALUE,
+     W3FS2.ACCEPTED_VARIANTS AS W3FS2_ACCEPTED_VARIANTS,
+     W3FS2.SCOPE_TOTAL AS W3FS2_SCOPE_TOTAL,
+     W3FS2.SCOPE_COST AS W3FS2_SCOPE_COST,
+     W3FS2.SCOPE_LOW AS W3FS2_SCOPE_LOW,
+     W3FS2.SCOPE_HIGH AS W3FS2_SCOPE_HIGH,
+     W3FS2.OPTIONS AS W3FS2_OPTIONS,
+     W3FS2.OPTION_DESCRIPTION AS W3FS2_OPTION_DESCRIPTION,
+     W3FS2.PROVISIONAL_MONTH AS W3FS2_PROVISIONAL_MONTH,
+     W3FS2.PROVISIONAL_DAY AS W3FS2_PROVISIONAL_DAY,
+     W3FS2.RENEWALS_NUMBER AS W3FS2_RENEWALS_NUMBER,
+     W3FS2.RENEWALS_MIN AS W3FS2_RENEWALS_MIN,
+     W3FS2.RENEWALS_MAX AS W3FS2_RENEWALS_MAX,
+     W3FS2.SUBSEQUENT_MONTH AS W3FS2_SUBSEQUENT_MONTH,
+     W3FS2.SUBSEQUENT_DAY AS W3FS2_SUBSEQUENT_DAY,
+     W3FS2.WORK_MONTH AS W3FS2_WORK_MONTH,
+     W3FS2.WORK_DAYS AS W3FS2_WORK_DAYS,
+     W3FS2.WORK_START_DATE AS W3FS2_WORK_START_DATE,
+     W3FS2.WORK_END_DATE AS W3FS2_WORK_END_DATE,
+     W3FS2.TYPE_PROCEDURE AS W3FS2_TYPE_PROCEDURE,
+     W3FS2.PTAR_JUSTIFICATION AS W3FS2_PTAR_JUSTIFICATION,
+     W3FS2.IS_CANDIDATE_SELECTED AS W3FS2_IS_CANDIDATE_SELECTED,
+     W3FS2.PTAN_JUSTIFICATION AS W3FS2_PTAN_JUSTIFICATION,
+     W3FS2.OPE_ENVISAGED_NUMBER AS W3FS2_OPE_ENVISAGED_NUMBER,
+     W3FS2.OPE_MINIMUM_NUMBER AS W3FS2_OPE_MINIMUM_NUMBER,
+     W3FS2.OPE_MAXIMUM_NUMBER AS W3FS2_OPE_MAXIMUM_NUMBER,
+     W3FS2.OPE_CRITERIA AS W3FS2_OPE_CRITERIA,
+     W3FS2.REDUCTION AS W3FS2_REDUCTION,
+     W3FS2.AWARD_CRITERIA AS W3FS2_AWARD_CRITERIA,
+     W3FS2.CRITERIA_POSITION AS W3FS2_CRITERIA_POSITION,
+     W3FS2.IS_ELECTRONIC AS W3FS2_IS_ELECTRONIC,
+     W3FS2.USE_ELECTRONIC AS W3FS2_USE_ELECTRONIC,
+     W3FS2.FILE_REFERENCE_NUMBER AS W3FS2_FILE_REFERENCE_NUMBER,
+     W3FS2.PREVIOUS_PUBBLICATION AS W3FS2_PREVIOUS_PUBBLICATION,
+     W3FS2.PRIOR_INFORMATION_NOTICE AS W3FS2_PRIOR_INFORMATION_NOTICE,
+     W3FS2.NOTICE_NUMBER_OJ AS W3FS2_NOTICE_NUMBER_OJ,
+     W3FS2.DATE_OJ AS W3FS2_DATE_OJ,
+     W3FS2.OTHER_PUBBLICATION AS W3FS2_OTHER_PUBBLICATION,
+     W3FS2.NOTICE_NUMBER_OJ_1 AS W3FS2_NOTICE_NUMBER_OJ_1,
+     W3FS2.DATE_OJ_1 AS W3FS2_DATE_OJ_1,
+     W3FS2.NOTICE_NUMBER_OJ_2 AS W3FS2_NOTICE_NUMBER_OJ_2,
+     W3FS2.DATE_OJ_2 AS W3FS2_DATE_OJ_2,
+     W3FS2.TIME_LIMIT_DATE AS W3FS2_TIME_LIMIT_DATE,
+     W3FS2.TIME_LIMIT_TIME AS W3FS2_TIME_LIMIT_TIME,
+     W3FS2.PAYABLE_DOCUMENTS AS W3FS2_PAYABLE_DOCUMENTS,
+     W3FS2.PAYABLE_DOCUMENTS_COST AS W3FS2_PAYABLE_DOCUMENTS_COST,
+     W3FS2.DOC_METHOD_PAYMENT AS W3FS2_DOC_METHOD_PAYMENT,
+     W3FS2.RECEIPT_LIMIT_DATE AS W3FS2_RECEIPT_LIMIT_DATE,
+     W3FS2.RECEIPT_LIMIT_TIME AS W3FS2_RECEIPT_LIMIT_TIME,
+     W3FS2.DISPATCH_INVITATIONS_DATE AS W3FS2_DISPATCH_INVITATIONS_DAT,
+     W3FS2.UNTIL_DATE AS W3FS2_UNTIL_DATE,
+     W3FS2.PERIOD_MONTH AS W3FS2_PERIOD_MONTH,
+     W3FS2.PERIOD_DAY AS W3FS2_PERIOD_DAY,
+     W3FS2.OPENING_TENDERS_DATE AS W3FS2_OPENING_TENDERS_DATE,
+     W3FS2.OPENING_TENDERS_TIME AS W3FS2_OPENING_TENDERS_TIME,
+     W3FS2.OPENING_TENDERS_CODEIN AS W3FS2_OPENING_TENDERS_CODEIN,
+     W3FS2.OPENING_TENDERS_PLACE AS W3FS2_OPENING_TENDERS_PLACE,
+     W3FS2.AUTHORISED_PERSONS AS W3FS2_AUTHORISED_PERSONS,
+     W3FS2.AUTHORISED_PERSONS_DESC AS W3FS2_AUTHORISED_PERSONS_DESC,
+     V_W3SIMAP.NOTICE_DATE AS W3FS2_NOTICE_DATE,
+     W3FS2.LANGUAGE_OTHER AS W3FS2_LANGUAGE_OTHER,
+     W3FS2.IDGARA AS W3FS2_IDGARA,
+     W3FS2S36.ID AS W3FS2S36_ID,
+     W3FS2S36.DEPOSITS_GUARANTEES AS W3FS2S36_DEPOSITS_GUARANTEES,
+     W3FS2S36.MAIN_FINANCING_CONDITIONS AS W3FS2S36_MAIN_FINANCING_CONDIT,
+     W3FS2S36.LEGAL_FORM AS W3FS2S36_LEGAL_FORM,
+     W3FS2S36.EXISTENCE_OTHER AS W3FS2S36_EXISTENCE_OTHER,
+     W3FS2S36.OTHER_CONDITIONS AS W3FS2S36_OTHER_CONDITIONS,
+     W3FS2S36.OPERATORS_PERSONAL_SITUATION AS W3FS2S36_OPERATORS_PERSONAL_SI,
+     W3FS2S36.EAF_CAPACITY_INFORMATION AS W3FS2S36_EAF_CAPACITY_INFORMAT,
+     W3FS2S36.EAF_CAPACITY_MIN_LEVEL AS W3FS2S36_EAF_CAPACITY_MIN_LEVE,
+     W3FS2S36.T_CAPACITY_INFORMATION AS W3FS2S36_T_CAPACITY_INFORMATIO,
+     W3FS2S36.T_CAPACITY_MIN_LEVEL AS W3FS2S36_T_CAPACITY_MIN_LEVEL,
+     W3FS2S36.RESERVED_CONTRACT AS W3FS2S36_RESERVED_CONTRACT,
+     W3FS2S36.RESTRICTED_SHELTERED AS W3FS2S36_RESTRICTED_SHELTERED,
+     W3FS2S36.RESTRICTED_FRAME AS W3FS2S36_RESTRICTED_FRAME,
+     W3FS2S36.SERVICE_RESERVED AS W3FS2S36_SERVICE_RESERVED,
+     W3FS2S36.SERVICE_RES_DESC AS W3FS2S36_SERVICE_RES_DESC,
+     W3FS2S36.REQUEST_NAMES AS W3FS2S36_REQUEST_NAMES,
+     W3FS2S36.RECURRENT_PROC AS W3FS2S36_RECURRENT_PROC,
+     W3FS2S36.RECURRENT_PROC_DESC AS W3FS2S36_RECURRENT_PROC_DESC,
+     W3FS2S36.EU_PROJECT AS W3FS2S36_EU_PROJECT,
+     W3FS2S36.EU_PROJECT_DESC AS W3FS2S36_EU_PROJECT_DESC,
+     W3FS2S36.ADDITIONAL_INFORMATION AS W3FS2S36_ADDITIONAL_INFORMATIO,
+     W3FS2S36.APPEAL_PROCEDURE_CODEIN AS W3FS2S36_APPEAL_PROCEDURE_CODE,
+     W3FS2S36.MEDIATION_PROCEDURE_CODEIN AS W3FS2S36_MEDIATION_PROCEDURE_C,
+     W3FS2S36.APPEAL_PRECISION AS W3FS2S36_APPEAL_PRECISION,
+     W3FS2S36.APPEAL_SERVICE_CODEIN AS W3FS2S36_APPEAL_SERVICE_CODEIN,
+     W3FS2.DESIGN_EXECUTION AS W3FS2_DESIGN_EXECUTION,
+     W3FS2.EXECUTION AS W3FS2_EXECUTION,
+     W3FS2.REALISATION_REQUIREMENTS AS W3FS2_REALISATION_REQUIREMENTS,
+     W3FS2.SITE_NUTS_2 AS W3FS2_SITE_NUTS_2,
+     W3FS2.SITE_NUTS_3 AS W3FS2_SITE_NUTS_3,
+     W3FS2.SITE_NUTS_4 AS W3FS2_SITE_NUTS_4,
+     W3FS2.RECURRENT_CONTRACT AS W3FS2_RECURRENT_CONTRACT,
+     W3FS2.LANGUAGE_ANY_EC AS W3FS2_LANGUAGE_ANY_EC
+FROM
+     W3SIMAP,
+     W3FS2,
+     W3FS2S36,
+     V_W3SIMAP
+WHERE
+     W3SIMAP.ID = W3FS2.ID
+AND  W3SIMAP.ID = W3FS2S36.ID
+AND  V_W3SIMAP.ID = W3SIMAP.ID
+AND  W3SIMAP.ID = $P{id}]]>
+	</queryString>
+	<field name="W3SIMAP_ID" class="java.math.BigDecimal"/>
+	<field name="W3SIMAP_FORM" class="java.lang.String"/>
+	<field name="W3SIMAP_CODAMM" class="java.lang.String"/>
+	<field name="W3SIMAP_CTYPE" class="java.lang.String"/>
+	<field name="W3SIMAP_NOTICE_NUMBER_OJ" class="java.lang.String"/>
+	<field name="W3SIMAP_DATE_OJ" class="java.sql.Timestamp"/>
+	<field name="W3SIMAP_SYSCON" class="java.math.BigDecimal"/>
+	<field name="W3FS2_ID" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FURTHER_INFO" class="java.lang.String"/>
+	<field name="W3FS2_FURTHER_INFO_CODEIN" class="java.lang.String"/>
+	<field name="W3FS2_ADDITIONAL_INFO" class="java.lang.String"/>
+	<field name="W3FS2_ADDITIONAL_INFO_CODEIN" class="java.lang.String"/>
+	<field name="W3FS2_REQUEST_SENT" class="java.lang.String"/>
+	<field name="W3FS2_REQUEST_SENT_CODEIN" class="java.lang.String"/>
+	<field name="W3FS2_TITLE_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS2_TYPE_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS2_TYPE_WORK_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS2_TYPE_SUPPLIES" class="java.lang.String"/>
+	<field name="W3FS2_TYPE_CATEGORY" class="java.lang.String"/>
+	<field name="W3FS2_SITE_LABEL" class="java.lang.String"/>
+	<field name="W3FS2_SITE_NUTS" class="java.lang.String"/>
+	<field name="W3FS2_NOTICE_INVOLVES" class="java.lang.String"/>
+	<field name="W3FS2_FRAME_SINGLE_OPERATOR" class="java.lang.String"/>
+	<field name="W3FS2_FRAME_OPERATORS_NUMBER" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_OPERATORS_MAX" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_DURATION_YEAR" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_DURATION_MONTH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_JUSTIFICATION" class="java.lang.String"/>
+	<field name="W3FS2_FRAME_TOTAL_COST" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_TOTAL_LOW" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_TOTAL_HIGH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_FRAME_FREQUENCY" class="java.lang.String"/>
+	<field name="W3FS2_SHORT_DESCRIPTION" class="java.lang.String"/>
+	<field name="W3FS2_CPV" class="java.lang.String"/>
+	<field name="W3FS2_CPVSUPP1" class="java.lang.String"/>
+	<field name="W3FS2_CPVSUPP2" class="java.lang.String"/>
+	<field name="W3FS2_CONTRACT_COVERED_GPA" class="java.lang.String"/>
+	<field name="W3FS2_DIV_INTO_LOTS" class="java.lang.String"/>
+	<field name="W3FS2_DIV_LOTS_VALUE" class="java.lang.String"/>
+	<field name="W3FS2_ACCEPTED_VARIANTS" class="java.lang.String"/>
+	<field name="W3FS2_SCOPE_TOTAL" class="java.lang.String"/>
+	<field name="W3FS2_SCOPE_COST" class="java.math.BigDecimal"/>
+	<field name="W3FS2_SCOPE_LOW" class="java.math.BigDecimal"/>
+	<field name="W3FS2_SCOPE_HIGH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_OPTIONS" class="java.lang.String"/>
+	<field name="W3FS2_OPTION_DESCRIPTION" class="java.lang.String"/>
+	<field name="W3FS2_PROVISIONAL_MONTH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_PROVISIONAL_DAY" class="java.math.BigDecimal"/>
+	<field name="W3FS2_RENEWALS_NUMBER" class="java.math.BigDecimal"/>
+	<field name="W3FS2_RENEWALS_MIN" class="java.math.BigDecimal"/>
+	<field name="W3FS2_RENEWALS_MAX" class="java.math.BigDecimal"/>
+	<field name="W3FS2_SUBSEQUENT_MONTH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_SUBSEQUENT_DAY" class="java.math.BigDecimal"/>
+	<field name="W3FS2_WORK_MONTH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_WORK_DAYS" class="java.math.BigDecimal"/>
+	<field name="W3FS2_WORK_START_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_WORK_END_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_TYPE_PROCEDURE" class="java.lang.String"/>
+	<field name="W3FS2_PTAR_JUSTIFICATION" class="java.lang.String"/>
+	<field name="W3FS2_IS_CANDIDATE_SELECTED" class="java.lang.String"/>
+	<field name="W3FS2_PTAN_JUSTIFICATION" class="java.lang.String"/>
+	<field name="W3FS2_OPE_ENVISAGED_NUMBER" class="java.math.BigDecimal"/>
+	<field name="W3FS2_OPE_MINIMUM_NUMBER" class="java.math.BigDecimal"/>
+	<field name="W3FS2_OPE_MAXIMUM_NUMBER" class="java.math.BigDecimal"/>
+	<field name="W3FS2_OPE_CRITERIA" class="java.lang.String"/>
+	<field name="W3FS2_REDUCTION" class="java.lang.String"/>
+	<field name="W3FS2_AWARD_CRITERIA" class="java.lang.String"/>
+	<field name="W3FS2_CRITERIA_POSITION" class="java.lang.String"/>
+	<field name="W3FS2_IS_ELECTRONIC" class="java.lang.String"/>
+	<field name="W3FS2_USE_ELECTRONIC" class="java.lang.String"/>
+	<field name="W3FS2_FILE_REFERENCE_NUMBER" class="java.lang.String"/>
+	<field name="W3FS2_PREVIOUS_PUBBLICATION" class="java.lang.String"/>
+	<field name="W3FS2_PRIOR_INFORMATION_NOTICE" class="java.lang.String"/>
+	<field name="W3FS2_NOTICE_NUMBER_OJ" class="java.lang.String"/>
+	<field name="W3FS2_DATE_OJ" class="java.sql.Timestamp"/>
+	<field name="W3FS2_OTHER_PUBBLICATION" class="java.lang.String"/>
+	<field name="W3FS2_NOTICE_NUMBER_OJ_1" class="java.lang.String"/>
+	<field name="W3FS2_DATE_OJ_1" class="java.sql.Timestamp"/>
+	<field name="W3FS2_NOTICE_NUMBER_OJ_2" class="java.lang.String"/>
+	<field name="W3FS2_DATE_OJ_2" class="java.sql.Timestamp"/>
+	<field name="W3FS2_TIME_LIMIT_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_TIME_LIMIT_TIME" class="java.lang.String"/>
+	<field name="W3FS2_PAYABLE_DOCUMENTS" class="java.lang.String"/>
+	<field name="W3FS2_PAYABLE_DOCUMENTS_COST" class="java.math.BigDecimal"/>
+	<field name="W3FS2_DOC_METHOD_PAYMENT" class="java.lang.String"/>
+	<field name="W3FS2_RECEIPT_LIMIT_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_RECEIPT_LIMIT_TIME" class="java.lang.String"/>
+	<field name="W3FS2_DISPATCH_INVITATIONS_DAT" class="java.sql.Timestamp"/>
+	<field name="W3FS2_UNTIL_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_PERIOD_MONTH" class="java.math.BigDecimal"/>
+	<field name="W3FS2_PERIOD_DAY" class="java.math.BigDecimal"/>
+	<field name="W3FS2_OPENING_TENDERS_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_OPENING_TENDERS_TIME" class="java.lang.String"/>
+	<field name="W3FS2_OPENING_TENDERS_CODEIN" class="java.lang.String"/>
+	<field name="W3FS2_OPENING_TENDERS_PLACE" class="java.lang.String"/>
+	<field name="W3FS2_AUTHORISED_PERSONS" class="java.lang.String"/>
+	<field name="W3FS2_AUTHORISED_PERSONS_DESC" class="java.lang.String"/>
+	<field name="W3FS2_NOTICE_DATE" class="java.sql.Timestamp"/>
+	<field name="W3FS2_LANGUAGE_OTHER" class="java.lang.String"/>
+	<field name="W3FS2_IDGARA" class="java.lang.String"/>
+	<field name="W3FS2S36_ID" class="java.math.BigDecimal"/>
+	<field name="W3FS2S36_DEPOSITS_GUARANTEES" class="java.lang.String"/>
+	<field name="W3FS2S36_MAIN_FINANCING_CONDIT" class="java.lang.String"/>
+	<field name="W3FS2S36_LEGAL_FORM" class="java.lang.String"/>
+	<field name="W3FS2S36_EXISTENCE_OTHER" class="java.lang.String"/>
+	<field name="W3FS2S36_OTHER_CONDITIONS" class="java.lang.String"/>
+	<field name="W3FS2S36_OPERATORS_PERSONAL_SI" class="java.lang.String"/>
+	<field name="W3FS2S36_EAF_CAPACITY_INFORMAT" class="java.lang.String"/>
+	<field name="W3FS2S36_EAF_CAPACITY_MIN_LEVE" class="java.lang.String"/>
+	<field name="W3FS2S36_T_CAPACITY_INFORMATIO" class="java.lang.String"/>
+	<field name="W3FS2S36_T_CAPACITY_MIN_LEVEL" class="java.lang.String"/>
+	<field name="W3FS2S36_RESERVED_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS2S36_RESTRICTED_SHELTERED" class="java.lang.String"/>
+	<field name="W3FS2S36_RESTRICTED_FRAME" class="java.lang.String"/>
+	<field name="W3FS2S36_SERVICE_RESERVED" class="java.lang.String"/>
+	<field name="W3FS2S36_SERVICE_RES_DESC" class="java.lang.String"/>
+	<field name="W3FS2S36_REQUEST_NAMES" class="java.lang.String"/>
+	<field name="W3FS2S36_RECURRENT_PROC" class="java.lang.String"/>
+	<field name="W3FS2S36_RECURRENT_PROC_DESC" class="java.lang.String"/>
+	<field name="W3FS2S36_EU_PROJECT" class="java.lang.String"/>
+	<field name="W3FS2S36_EU_PROJECT_DESC" class="java.lang.String"/>
+	<field name="W3FS2S36_ADDITIONAL_INFORMATIO" class="java.lang.String"/>
+	<field name="W3FS2S36_APPEAL_PROCEDURE_CODE" class="java.lang.String"/>
+	<field name="W3FS2S36_MEDIATION_PROCEDURE_C" class="java.lang.String"/>
+	<field name="W3FS2S36_APPEAL_PRECISION" class="java.lang.String"/>
+	<field name="W3FS2S36_APPEAL_SERVICE_CODEIN" class="java.lang.String"/>
+	<field name="W3FS2_DESIGN_EXECUTION" class="java.lang.String"/>
+	<field name="W3FS2_EXECUTION" class="java.lang.String"/>
+	<field name="W3FS2_REALISATION_REQUIREMENTS" class="java.lang.String"/>
+	<field name="W3FS2_SITE_NUTS_2" class="java.lang.String"/>
+	<field name="W3FS2_SITE_NUTS_3" class="java.lang.String"/>
+	<field name="W3FS2_SITE_NUTS_4" class="java.lang.String"/>
+	<field name="W3FS2_RECURRENT_CONTRACT" class="java.lang.String"/>
+	<field name="W3FS2_LANGUAGE_ANY_EC" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="90" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3SIMAP_NOTICE_NUMBER_OJ}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="15" width="90" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3SIMAP_DATE_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="173" y="0" width="207" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bando di gara]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="40" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="465" y="0" width="44" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="509" y="0" width="46" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="331" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="70" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE I: AMMINISTRAZIONE AGGIUDICATRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="90" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.1) Denominazione, indirizzi e punti di contatto]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="110" width="555" height="100"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Amministrazione.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="210" width="555" height="20" forecolor="#FFFFFF"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="230" width="366" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ulteriori informazioni sono disponibili presso: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="245" width="366" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Il capitolato d'oneri e la documentazione complementare sono disponibili presso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="260" width="366" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Le offerte e le domande di partecipazione vanno inviate a:]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="0" y="275" width="555" height="20" forecolor="#FFFFFF"/>
+			</line>
+			<break>
+				<reportElement positionType="Float" x="0" y="322" width="100" height="1"/>
+			</break>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_TITLE_CONTRACT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="172" y="25" width="93" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3SIMAP_NOTICE_NUMBER_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="265" y="25" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[del]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="290" y="25" width="90" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3SIMAP_DATE_OJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="366" y="230" width="190" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS2_FURTHER_INFO}==null ? "": ($F{W3FS2_FURTHER_INFO}.equals("1") ? "I punti di contatto sopra indicati":"Altro: vedi allegato A.I"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="366" y="260" width="191" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS2_REQUEST_SENT}==null ? "": ($F{W3FS2_REQUEST_SENT}.equals("1") ? "I punti di contatto sopra indicati":"Altro: vedi allegato A.III"))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="366" y="245" width="190" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS2_ADDITIONAL_INFO}==null ? "": ($F{W3FS2_ADDITIONAL_INFO}.equals("1") ? "I punti di contatto sopra indicati":"Altro: vedi allegato A.II"))]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="295" width="555" height="27"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="formulario">
+					<subreportParameterExpression><![CDATA["FS2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="codamm">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_CODAMM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "TipoAmministrazione.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="673">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE II: OGGETTO  DELL'APPALTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1) Descrizione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.1) Denominazione conferita all'appalto dall'amministrazione aggiudicatrice]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_TITLE_CONTRACT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="95" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.2) Tipo di appalto e luogo di esecuzione, luogo di consegna o di prestazione dei servizi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="115" width="196" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Tipo di appalto:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="196" y="115" width="359" height="15"/>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z40"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_TYPE_CONTRACT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="196" y="187" width="359" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("SUPP"))]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_TYPE_SUPPLIES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z42"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="196" y="202" width="359" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("SERV"))]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_TYPE_CATEGORY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z43"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="217" width="196" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Sito o luogo principale di esecuzione:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="196" y="217" width="359" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SITE_LABEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="232" width="196" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Codici NUTS:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="196" y="232" width="65" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SITE_NUTS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="267" width="555" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.3) Informazioni sugli appalti pubblici, l'accordo quadro o il sistema dinamico di acquisizione (SDA)]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="287" width="555" height="15"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z44"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="302" y="342" width="165" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Accordo con un unico operatore:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="322" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.4) Informazioni relative all'accordo quadro]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="467" y="342" width="42" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS2_FRAME_SINGLE_OPERATOR} == null ? "--":($F{W3FS2_FRAME_SINGLE_OPERATOR} == "1" ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="357" width="48" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_SINGLE_OPERATOR}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero:]]></text>
+			</staticText>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="48" y="357" width="30" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_SINGLE_OPERATOR}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_OPERATORS_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="104" y="357" width="92" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_SINGLE_OPERATOR}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero massimo:]]></text>
+			</staticText>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="196" y="357" width="42" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_SINGLE_OPERATOR}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_OPERATORS_MAX}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="372" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") &&
+($F{W3FS2_FRAME_DURATION_YEAR}!=null ||
+$F{W3FS2_FRAME_DURATION_MONTH}!=null ||
+$F{W3FS2_FRAME_JUSTIFICATION}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Durata dell'accordo quadro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="392" width="78" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") &&
+($F{W3FS2_FRAME_DURATION_YEAR}!=null ||
+$F{W3FS2_FRAME_DURATION_MONTH}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Durata in anni:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="392" width="26" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_DURATION_YEAR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="106" y="392" width="88" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") &&
+($F{W3FS2_FRAME_DURATION_YEAR}!=null ||
+$F{W3FS2_FRAME_DURATION_MONTH}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[oppure in mesi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="196" y="392" width="36" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_DURATION_MONTH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="407" width="319" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_JUSTIFICATION} != null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Giustificazione dell'accordo quadro con durata superiore a quattro anni:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="422" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_FRAME_JUSTIFICATION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="342" width="196" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Accordo quadro con diversi operatori:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="196" y="342" width="42" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS2_FRAME_SINGLE_OPERATOR} == null ? "--":($F{W3FS2_FRAME_SINGLE_OPERATOR} == "1" ? "No":"Si"))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="202" width="196" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("SERV"))]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Categoria di servizi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="130" width="90" height="57" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Tipologia lavori:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="187" width="196" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("SUPP"))]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Modalità di acquisizione:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="437" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") &&
+($F{W3FS2_FRAME_TOTAL_COST}!=null ||
+$F{W3FS2_FRAME_TOTAL_LOW}!=null ||
+$F{W3FS2_FRAME_TOTAL_HIGH}!=null ||
+$F{W3FS2_FRAME_FREQUENCY}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valore totale stimato degli acquisti per l'intera durata dell'accordo quadro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="457" width="132" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_TOTAL_COST}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Valore stimato, IVA esclusa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="472" width="191" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") &&
+($F{W3FS2_FRAME_TOTAL_LOW}!=null || $F{W3FS2_FRAME_TOTAL_HIGH}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Valore stimato, IVA esclusa, compreso tra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="293" y="472" width="13" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") &&
+($F{W3FS2_FRAME_TOTAL_LOW}!=null || $F{W3FS2_FRAME_TOTAL_HIGH}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[e]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="537" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.5) Breve descrizione dell'appalto o degli acquisti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="487" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1") && $F{W3FS2_FRAME_FREQUENCY} != null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Frequenza e valore degli appalti da aggiudicare:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="132" y="457" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_TOTAL_COST}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="193" y="472" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_TOTAL_LOW}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="308" y="472" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_FRAME_TOTAL_HIGH}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="502" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_NOTICE_INVOLVES}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_FRAME_FREQUENCY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="557" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SHORT_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="592" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.6) Vocabolario comune per gli appalti (CPV)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="3" y="627" width="222" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Oggetto principale:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="225" y="627" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_CPV}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="395" y="627" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_CPVSUPP1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="475" y="627" width="80" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_CPVSUPP2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="225" y="612" width="170" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario principale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="395" y="612" width="160" height="15"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vocabolario supplementare]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="642" width="555" height="15"/>
+				<subreportParameter name="ent">
+					<subreportParameterExpression><![CDATA["W3FS2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CpvAdditionalMain.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement positionType="Float" x="0" y="75" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="247" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="302" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="217" y="130" width="332" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Esecuzione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="217" y="145" width="332" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Progettazione ed esecuzione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="217" y="160" width="332" height="27" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Realizzazione, con qualsiasi mezzo di lavoro, conforme alle prescrizioni delle amministrazione aggiudicatrici]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="517" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="572" width="555" height="20"/>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="261" y="232" width="65" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SITE_NUTS_2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="326" y="232" width="65" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SITE_NUTS_3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="391" y="232" width="65" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SITE_NUTS_4}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="195" y="130" width="18" height="15">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_EXECUTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="195" y="145" width="18" height="15">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_DESIGN_EXECUTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="195" y="160" width="18" height="15">
+					<printWhenExpression><![CDATA[($F{W3FS2_TYPE_CONTRACT}.equals("WORK"))]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_REALISATION_REQUIREMENTS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="556">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="180" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.2) Quantitativo o entità totale (compresi tutti gli eventuali lotti e opzioni)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="200" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_SCOPE_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="144" y="215" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_SCOPE_COST}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="194" y="230" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_SCOPE_LOW}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="311" y="230" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_SCOPE_HIGH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="215" width="137" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_SCOPE_COST}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Valore stimato, IVA esclusa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="230" width="191" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_SCOPE_LOW}!=null || $F{W3FS2_SCOPE_HIGH}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Valore stimato, IVA esclusa, compreso tra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="294" y="230" width="17" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_SCOPE_LOW}!=null || $F{W3FS2_SCOPE_HIGH}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[e]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="265" width="80" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.2.2) Opzioni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="300" width="122" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Descrizione delle opzioni:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="125" y="300" width="433" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_OPTION_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="315" width="254" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1") && ($F{W3FS2_PROVISIONAL_MONTH}!= null || $F{W3FS2_PROVISIONAL_DAY}!= null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Calendario provvisorio per il ricorso a tali opzioni:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="61" y="330" width="40" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_PROVISIONAL_MONTH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="101" y="330" width="60" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1") && ($F{W3FS2_PROVISIONAL_MONTH}!= null || $F{W3FS2_PROVISIONAL_DAY}!= null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ o giorni:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="161" y="330" width="44" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_PROVISIONAL_DAY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="205" y="330" width="175" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1") && ($F{W3FS2_PROVISIONAL_MONTH}!= null || $F{W3FS2_PROVISIONAL_DAY}!= null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[(dall'aggiudicazione dell'appalto)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="400" width="123" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero di possibili rinnovi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="125" y="400" width="29" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_RENEWALS_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="415" width="137" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero rinnovi compreso tra:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="140" y="415" width="29" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_RENEWALS_MIN}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="186" y="415" width="29" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_RENEWALS_MAX}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="169" y="415" width="17" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[e]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="430" width="448" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nel caso di appalti rinnovabili di forniture e servizi, calendario di massima degli appalti successivi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="445" width="60" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[in mesi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="61" y="445" width="40" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_SUBSEQUENT_MONTH}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="164" y="445" width="44" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_SUBSEQUENT_DAY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="102" y="445" width="60" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[o giorni:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="208" y="445" width="175" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[(dall'aggiudicazione dell'appalto)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="480" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.3) Durata dell'appalto o termine di esecuzione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="500" width="78" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_WORK_MONTH}!=null || $F{W3FS2_WORK_DAYS}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Durata in mesi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="515" width="78" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_WORK_START_DATE}!=null || $F{W3FS2_WORK_END_DATE}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[oppure inizio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="120" y="500" width="60" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_WORK_MONTH}!=null || $F{W3FS2_WORK_DAYS}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[o giorni:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="232" y="500" width="215" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_WORK_MONTH}!=null || $F{W3FS2_WORK_DAYS}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[(dall'aggiudicazione dell'appalto)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="500" width="36" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_WORK_MONTH}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="183" y="500" width="44" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_WORK_DAYS}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="82" y="515" width="70" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_WORK_START_DATE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="228" y="515" width="70" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_WORK_END_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="154" y="515" width="71" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_WORK_START_DATE}!=null || $F{W3FS2_WORK_END_DATE}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[conclusione:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="330" width="60" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_OPTIONS}.equals("1") && ($F{W3FS2_PROVISIONAL_MONTH}!= null || $F{W3FS2_PROVISIONAL_DAY}!= null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[in mesi:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="10" forecolor="#FFFFFF"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="2" y="0" width="448" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.7) Informazioni relative all'accordo sugli appalti pubblici (AAP)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="2" y="55" width="78" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.1.8) Lotti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="80" y="55" width="453" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(per ulteriori precisazioni sui lotti utilizzare l'allegato B nel numero di copie necessario)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="90" width="189" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Le offerte vanno presentate per:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="191" y="90" width="235" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_DIV_LOTS_VALUE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z45"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="2" y="125" width="448" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[II.1.9) Informazioni sulle varianti]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="35" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="105" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="160" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="245" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="1" y="460" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="322" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'appalto è disciplinato dall'accordo sugli appalti pubblici (AAP):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="75" width="189" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Questo appalto è suddiviso in lotti:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="145" width="136" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ammissibilità di varianti:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="1" y="345" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="285" width="59" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Opzioni:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="365" width="234" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II.2.3) Informazioni sui rinnovi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="385" width="154" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'appalto è oggetto di rinnovo:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="1" y="530" width="555" height="20"/>
+			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="323" y="20" width="133" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_CONTRACT_COVERED_GPA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="191" y="75" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="139" y="145" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_ACCEPTED_VARIANTS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="61" y="285" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_OPTIONS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="156" y="385" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_RECURRENT_CONTRACT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="652">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="550" height="40" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE III: INFORMAZIONI DI CARATTERE GIURIDICO, ECONOMICO, FINANZIARIO E TECNICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.1) Condizioni relative all'appalto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="60" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.1.1) Cauzioni e garanzie richieste]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="115" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.1.2) Principali modalita' di finanziamento e di pagamento e/o riferimenti alle disposizioni applicabili in materia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="170" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.1.3) Forma giuridica che dovra' assumere il raggruppamento di operatori economici aggiudicatario dell'appalto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="225" width="366" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.1.4) Altre condizioni particolari]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="80" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_DEPOSITS_GUARANTEES}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="135" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_MAIN_FINANCING_CONDIT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="190" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_LEGAL_FORM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="260" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_EXISTENCE_OTHER}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_OTHER_CONDITIONS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="295" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.2) Condizioni di partecipazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="315" width="555" height="32" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.2.1) Situazione personale degli operatori, inclusi i requisiti relativi all'iscrizione nell'albo professionale o nel registro commerciale]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="347" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_OPERATORS_PERSONAL_SI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="382" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.2.2) Capacita' economica e finanziaria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="402" width="332" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_EAF_CAPACITY_INFORMAT}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Informazioni e formalità necessarie per valutare la conformità ai requisiti:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="417" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_EAF_CAPACITY_INFORMAT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="432" width="332" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_EAF_CAPACITY_MIN_LEVE}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Livelli minimi di capacità eventualmente richiesti (se del caso):]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="447" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_EAF_CAPACITY_MIN_LEVE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="482" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.2.3) Capacita' tecnica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="502" width="332" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_T_CAPACITY_INFORMATIO}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Informazioni e formalità necessarie per valutare la conformità ai requisiti:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="517" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_T_CAPACITY_INFORMATIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="532" width="332" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_T_CAPACITY_MIN_LEVEL}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Livelli minimi di capacità eventualmente richiesti (se del caso):]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="547" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_T_CAPACITY_MIN_LEVEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="582" width="236" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.2.4) Informazioni concernenti appalti riservati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="603" width="303" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_RESERVED_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'appalto è riservato ai laboratori protetti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="618" width="322" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_RESERVED_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'esecuzione dell'appalto è riservata ai programmi di lavoro protetti]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="632" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="245" width="290" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[La realizzazione dell'appalto è soggetta a condizioni particolari:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="294" y="245" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_EXISTENCE_OTHER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="603" width="18" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_RESERVED_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_RESTRICTED_SHELTERED}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="618" width="18" height="12">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_RESERVED_CONTRACT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_RESTRICTED_FRAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="674">
+			<rectangle>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="581" width="555" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="201" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.1) Tipo di procedura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="221" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.1.1) Tipo di procedura]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="241" width="183" height="15"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z46"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="196" y="241" width="148" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("4")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Sono già stati scelti candidati ?]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="344" y="241" width="36" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("4")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{W3FS2_IS_CANDIDATE_SELECTED}==null ? "--" : ($F{W3FS2_IS_CANDIDATE_SELECTED}.equals("1") ? "Si":"No"))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="256" width="196" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("3")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Giustificazione delle procedura accelerata:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="196" y="256" width="359" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_PTAR_JUSTIFICATION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="196" y="271" width="359" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_PTAN_JUSTIFICATION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="271" width="196" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("5")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Giustificazione delle procedura accelerata:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="306" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.1.2) Limiti al numero di operatori che saranno invitati a presentare un'offerta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="334" width="172" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null &&
+!$F{W3FS2_TYPE_PROCEDURE}.equals("1") &&
+$F{W3FS2_OPE_ENVISAGED_NUMBER} != null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero previsto di operatori:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="349" width="172" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1") &&
+($F{W3FS2_OPE_MINIMUM_NUMBER}!=null || $F{W3FS2_OPE_MAXIMUM_NUMBER}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Numero minimo previsto di operatori:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="219" y="349" width="103" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1") &&
+($F{W3FS2_OPE_MINIMUM_NUMBER}!=null || $F{W3FS2_OPE_MAXIMUM_NUMBER}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ e numero massimo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="364" width="398" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null &&
+!$F{W3FS2_TYPE_PROCEDURE}.equals("1") &&
+$F{W3FS2_OPE_CRITERIA}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Criteri obiettivi per la selezione di un numero limitato di candidati:]]></text>
+			</staticText>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="173" y="334" width="39" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_OPE_ENVISAGED_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="173" y="349" width="38" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_OPE_MINIMUM_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="322" y="349" width="42" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_OPE_MAXIMUM_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="379" width="398" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!= null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_OPE_CRITERIA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="414" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.1.3) Riduzione del numero di operatori durante il negoziato o il dialogo (procedura negoziata, dialogo competitivo)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="446" width="408" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("4") || $F{W3FS2_TYPE_PROCEDURE}.equals("5") || $F{W3FS2_TYPE_PROCEDURE}.equals("6")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ricorso ad una procedura in più fasi al fine di ridurre il numero di soluzioni da discutere o di offerte da negoziare:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="476" width="555" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="496" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2) Criteri di aggiudicazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="516" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2.1) Criteri di aggiudicazione]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="536" width="555" height="15"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_AWARD_CRITERIA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z47"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="551" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_CRITERIA_POSITION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z48"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="566" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_CRITERIA_POSITION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Criteria.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="601" width="196" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.2.2) Informazioni sull'asta elettronica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="636" width="196" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_IS_ELECTRONIC}.equals("1") && $F{W3FS2_USE_ELECTRONIC}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ulteriori informazioni sull'asta elettronica:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="198" y="636" width="358" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_IS_ELECTRONIC}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_USE_ELECTRONIC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="322" width="552" height="12" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(procedure ristrette e negoziate, dialogo competitivo)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="434" width="552" height="12" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(procedura negoziata, dialogo competitivo)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="180" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE IV: PROCEDURA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="74" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_SERVICE_RESERVED}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_SERVICE_RES_DESC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="109" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III.3.2) Personale responsabile dell'esecuzione del servizio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="44" width="332" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[La prestazione del servizio è riservata ad una particolare professione:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="59" width="555" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Citare la corrispondente disposizione legislativa, regolamentare o amministrativa applicabile:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="89" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="129" width="326" height="30"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Le persone giuridiche devono indicare il nome e le qualifiche professionali del personale incaricato della prestazione del servizio:]]></text>
+			</staticText>
+			<elementGroup>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="3" width="555" height="20"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[III.3) Condizioni relative all'appalto di servizi]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="24" width="555" height="20"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[III.3.1) Informazioni relative ad una particolare professione]]></text>
+				</staticText>
+			</elementGroup>
+			<frame>
+				<reportElement positionType="Float" x="0" y="286" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="394" width="555" height="20"/>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="621" width="154" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ricorso ad un'asta elettronica:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="651" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="159" width="555" height="20"/>
+			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="336" y="44" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_SERVICE_RESERVED}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="327" y="137" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_REQUEST_NAMES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="158" y="621" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_IS_ELECTRONIC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="411" y="454" width="120" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("4") || $F{W3FS2_TYPE_PROCEDURE}.equals("5") || $F{W3FS2_TYPE_PROCEDURE}.equals("6")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_REDUCTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="692">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="8" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3) Informazioni di carattere amministrativo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="28" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.1) Numero di riferimento attribuito al dossier dall'amministrazione aggiudicatrice]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="48" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_FILE_REFERENCE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="83" width="293" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.2) Pubblicazioni precedenti relative allo stesso appalto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="450" width="164" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Lingua o lingue ufficiali dell'UE:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="262" y="635" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_AUTHORISED_PERSONS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="435" width="164" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Qualsiasi lingua ufficiale dell'UE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="206" y="133" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_NOTICE_NUMBER_OJ_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="330" y="133" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_DATE_OJ_1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="206" y="148" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_NOTICE_NUMBER_OJ_2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="330" y="148" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_DATE_OJ_2}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="165" y="435" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_LANGUAGE_ANY_EC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="306" y="133" width="24" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[ del ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="138" y="118" width="24" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[ del ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="306" y="148" width="24" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[ del ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="188" y="133" width="17" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[N.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="188" y="148" width="17" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1") && $F{W3FS2_OTHER_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[N.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="133" width="155" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Altre pubblicazioni precedenti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="183" width="555" height="30" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.3) Condizioni per ottenere il capitolato d'oneri e la documentazione complementare oppure il documento descrittivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="213" width="243" height="30" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Termine per il ricevimento delle richieste di documenti o per l'acceso ai documenti:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="261" y="213" width="40" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="261" y="228" width="40" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ora:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="301" y="213" width="78" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_TIME_LIMIT_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="301" y="228" width="40" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_TIME_LIMIT_TIME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="243" width="144" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Documenti a pagamento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="262" y="243" width="52" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PAYABLE_DOCUMENTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Prezzo:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="315" y="243" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PAYABLE_DOCUMENTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_PAYABLE_DOCUMENTS_COST}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="258" width="180" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PAYABLE_DOCUMENTS}.equals("1") &&
+$F{W3FS2_DOC_METHOD_PAYMENT}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Condizioni e modalità di pagamento:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="179" y="258" width="375" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PAYABLE_DOCUMENTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_DOC_METHOD_PAYMENT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="293" width="555" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.4) Termine per il ricevimento delle offerte e delle domande di partecipazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="313" width="40" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="131" y="313" width="40" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ora:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="39" y="313" width="70" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_RECEIPT_LIMIT_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="171" y="313" width="40" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_RECEIPT_LIMIT_TIME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="348" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.5) Data di spedizione ai candidati prescelti degli inviti a presentare offerte o a partecipare]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="39" y="380" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!=null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_DISPATCH_INVITATIONS_DAT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="380" width="40" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}!=null && !$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="368" width="467" height="12" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(nel caso di procedure ristrette e negoziate e del dialogo competitivo)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="415" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.6) Lingue utilizzabili per la presentazione delle offerte/domande di partecipazione]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="165" y="450" width="337" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Language.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="465" width="78" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_LANGUAGE_OTHER}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Altra lingua:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="77" y="465" width="477" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_LANGUAGE_OTHER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="500" width="390" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.7) Periodo minimo durante il quale l'offerente è vincolato alla propria offerta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="390" y="500" width="76" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(procedure aperte)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="520" width="78" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1") && $F{W3FS2_UNTIL_DATE}!=null]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fino al:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="81" y="520" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_UNTIL_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="535" width="79" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1") && ($F{W3FS2_PERIOD_MONTH}!=null || $F{W3FS2_PERIOD_DAY}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Periodo in mesi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="81" y="535" width="41" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_PERIOD_MONTH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="129" y="535" width="53" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1") && ($F{W3FS2_PERIOD_MONTH}!=null || $F{W3FS2_PERIOD_DAY}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ o giorni:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="182" y="535" width="43" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{W3FS2_PERIOD_DAY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="235" y="535" width="229" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_TYPE_PROCEDURE}.equals("1") && ($F{W3FS2_PERIOD_MONTH}!=null || $F{W3FS2_PERIOD_DAY}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[(dal termine ultimo per il ricevimento delle offerte)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="570" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV.3.8) Modalità di apertura delle offerte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="590" width="40" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="39" y="590" width="70" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_OPENING_TENDERS_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="149" y="590" width="40" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ora:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="189" y="590" width="40" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_OPENING_TENDERS_TIME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="605" width="78" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Luogo o ufficio:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="78" y="605" width="475" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_OPENING_TENDERS_PLACE}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="620" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_OPENING_TENDERS_CODEIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="635" width="261" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Persone ammesse ad assistere all'apertura delle offerte:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="650" width="380" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_AUTHORISED_PERSONS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Informazioni complementari sulle persone ammesse e la procedura di apertura:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="381" y="650" width="166" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_AUTHORISED_PERSONS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_AUTHORISED_PERSONS_DESC}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="63" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="163" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="273" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="328" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="395" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="480" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="550" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="-1" y="665" width="555" height="20"/>
+			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="294" y="86" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="133" width="18" height="15">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_OTHER_PUBBLICATION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Checkbox.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="146" y="243" width="113" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_PAYABLE_DOCUMENTS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="38" y="118" width="100" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2_NOTICE_NUMBER_OJ}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="163" y="118" width="70" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_DATE_OJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="2" y="118" width="36" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[N.]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="103" width="415" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_PREVIOUS_PUBBLICATION}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="tab2tip">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_PRIOR_INFORMATION_NOTICE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tab2cod">
+					<subreportParameterExpression><![CDATA["W3z55"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Tab2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="494">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="20" backcolor="#E6E6E6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEZIONE VI: ALTRE INFORMAZIONI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="234" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.1)  Informazioni sulla periodicità (se del caso)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="56" width="351" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_RECURRENT_PROC}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Calendario di massima per la pubblicazione dei prossimi avvisi:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="71" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_RECURRENT_PROC}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_RECURRENT_PROC_DESC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="106" width="414" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.2) Informazioni sui fondi dell'Unione Europea]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="156" width="555" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_EU_PROJECT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_EU_PROJECT_DESC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="191" width="414" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.3) Informazioni complementari]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="211" width="551" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_ADDITIONAL_INFORMATIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="246" width="414" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.4) Procedure di ricorso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="266" width="414" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_APPEAL_PROCEDURE_CODE}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.4.1) Organismo responsabile delle procedure di ricorso]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="286" width="552" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_APPEAL_PROCEDURE_CODE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="301" width="414" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_MEDIATION_PROCEDURE_C}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Organismo responsabile delle procedure di mediazione]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="321" width="553" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_MEDIATION_PROCEDURE_C}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="356" width="414" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.4.2) Presentazione di ricorso (informazioni sui termini di presentazione di ricorso)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="376" width="553" height="15" isRemoveLineWhenBlank="true"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{W3FS2S36_APPEAL_PRECISION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="411" width="502" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.4.3) Servizio presso il quale sono disponibili informazioni sulla presentazione di ricorso]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="431" width="552" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_APPEAL_SERVICE_CODEIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="466" width="219" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI.5) Data di spedizione del presente avviso]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="222" y="466" width="100" height="20"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{W3FS2_NOTICE_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="141" width="351" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2S36_EU_PROJECT}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Indicare il o i progetti e/o il o i programmi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="40" width="160" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Si tratta di un appalto periodico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="126" width="432" height="15"/>
+				<box leftPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[L'appalto è connesso ad un progetto e/o programma finanziato da fondi dell'Unione Europea:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="86" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="171" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="226" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="336" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="391" width="555" height="20"/>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="446" width="555" height="20"/>
+			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="164" y="40" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_RECURRENT_PROC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="434" y="126" width="120" height="15"/>
+				<subreportParameter name="valore">
+					<subreportParameterExpression><![CDATA[$F{W3FS2S36_EU_PROJECT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CheckboxDoppia.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="226">
+			<printWhenExpression><![CDATA[$F{W3FS2_FURTHER_INFO_CODEIN}!=null ||
+$F{W3FS2_ADDITIONAL_INFO_CODEIN}!=null ||
+$F{W3FS2_REQUEST_SENT_CODEIN}!=null]]></printWhenExpression>
+			<break>
+				<reportElement positionType="Float" x="0" y="0" width="222" height="1"/>
+			</break>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allegato A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="21" width="555" height="20" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altri indirizzi e punti di contatto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="41" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_FURTHER_INFO_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I) Indirizzi e punti di contatto presso i quali sono disponibili ulteriori informazioni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="96" width="555" height="40" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_ADDITIONAL_INFO_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[II) Indirizzi e punti di contatto presso i quali sono disponibili il capitolato d'oneri e la documentazione complementare (inclusi i documenti per il dialogo competitivo e per il sistema dinamico di acquisizione)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="171" width="555" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{W3FS2_REQUEST_SENT_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[III) Indirizzi e punti di contatto ai quali inviare le offerte/domande di partecipazione]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="61" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_FURTHER_INFO_CODEIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="136" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_ADDITIONAL_INFO_CODEIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="191" width="555" height="15" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codein">
+					<subreportParameterExpression><![CDATA[$F{W3FS2_REQUEST_SENT_CODEIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Ufficio.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement positionType="Float" x="0" y="206" width="555" height="20">
+					<printWhenExpression><![CDATA[$F{W3FS2_REQUEST_SENT_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="76" width="555" height="20">
+					<printWhenExpression><![CDATA[$F{W3FS2_FURTHER_INFO_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="151" width="555" height="20">
+					<printWhenExpression><![CDATA[$F{W3FS2_ADDITIONAL_INFO_CODEIN}!=null]]></printWhenExpression>
+				</reportElement>
+			</frame>
+		</band>
+		<band height="31">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="28" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="codamm">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_CODAMM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="form">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_FORM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "AltreAmministrazioni.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="22">
+			<printWhenExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}.equals("1")]]></printWhenExpression>
+			<break>
+				<reportElement positionType="Float" x="0" y="0" width="100" height="1">
+					<printWhenExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="1" width="555" height="21">
+					<printWhenExpression><![CDATA[$F{W3FS2_DIV_INTO_LOTS}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{W3SIMAP_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="formulario">
+					<subreportParameterExpression><![CDATA["FS2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "AnnexB.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
