@@ -17,3 +17,6 @@ Funzioanlità principali:
 - Compilaizone e controllo dei dati da pubblicare
 - Generazione anterpima PDF del formulario
 - Invio dei dati al SIMAP per la pubblicazione dei formulari GUUE
+
+
+ATTENZIONE: sistema abbandonato con il passaggio a TED SDK 1.12 e sostituito dal 1 gennaio 2024 dai servizi PCP di ANAC.
